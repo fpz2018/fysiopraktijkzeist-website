@@ -25,6 +25,22 @@ collections:
       - { label: "Inhoud", name: "body", widget: "markdown" }
       - { label: "Gepubliceerd", name: "published", widget: "boolean", default: true }
 
+  # ── Behandelingen (diensten) ──────────────────────────────
+  - name: "diensten"
+    label: "Behandelingen"
+    folder: "src/onze-diensten"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Samenvatting (voor Google)", name: "excerpt", widget: "text" }
+      - label: "Categorie"
+        name: "category"
+        widget: "select"
+        options: ["Behandelingen"]
+        default: "Behandelingen"
+      - { label: "Inhoud", name: "body", widget: "markdown" }
+
   # ── Pagina instellingen ───────────────────────────────────
   - name: "settings"
     label: "Website instellingen"
