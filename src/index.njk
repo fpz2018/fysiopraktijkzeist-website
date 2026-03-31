@@ -157,6 +157,8 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     .blog-tag { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
     .blog-card h3 { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; line-height: 1.35; color: var(--dark); }
     .blog-card p { font-size: .85rem; color: var(--gray); line-height: 1.6; flex: 1; }
+    .blog-read-more { font-size: .83rem; font-weight: 600; color: var(--teal); margin-top: 4px; display: inline-block; }
+    .blog-card:hover .blog-read-more { text-decoration: underline; }
     .footer { background: var(--dark); color: rgba(255,255,255,.7); padding: 56px 0 32px; }
     .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
     .footer__brand p { font-size: .875rem; line-height: 1.7; max-width: 280px; margin-top: 14px; }
@@ -464,6 +466,7 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
           <span class="blog-tag">{{ post.data.category }}</span>
           <h3>{{ post.data.title }}</h3>
           <p>{{ post.data.excerpt }}</p>
+          <span class="blog-read-more">Lees verder →</span>
         </div>
       </a>
       {% endfor %}
