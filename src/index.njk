@@ -315,12 +315,12 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     </div>
     <div class="diensten-grid">
       {% for item in services.items %}
-      <div class="dienst-card fade-up">
+      <a href="{{ item.url }}" class="dienst-card fade-up">
         <div class="dienst-icon">{{ item.icon }}</div>
         <h3>{{ item.name }}</h3>
         <p>{{ item.description }}</p>
         <span class="dienst-link">Meer informatie →</span>
-      </div>
+      </a>
       {% endfor %}
     </div>
   </div>
