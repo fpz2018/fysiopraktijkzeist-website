@@ -56,8 +56,16 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     .hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
     .hero::after { content: ''; position: absolute; bottom: -80px; right: -80px; width: 480px; height: 480px; background: radial-gradient(circle, rgba(217,107,47,.22) 0%, transparent 70%); pointer-events: none; }
     .hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
-    .hero__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 50px; padding: 6px 14px; font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.9); margin-bottom: 20px; }
-    .hero__badge::before { content: '●'; color: #4ADE80; font-size: .6rem; }
+    .hero__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 50px; padding: 6px 14px; font-size: .8rem; font-weight: 500; color: rgba(255,255,255,.9); margin-bottom: 20px; animation: badgePulse 3s ease-in-out infinite; }
+    .hero__badge::before { content: '●'; color: #4ADE80; font-size: .6rem; animation: dotPulse 2s ease-in-out infinite; }
+    @keyframes badgePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,.0), 0 0 8px rgba(74,222,128,.0); }
+      50% { box-shadow: 0 0 12px 4px rgba(74,222,128,.18), 0 0 24px rgba(74,222,128,.08); border-color: rgba(74,222,128,.35); }
+    }
+    @keyframes dotPulse {
+      0%, 100% { opacity: 1; text-shadow: 0 0 0 rgba(74,222,128,0); }
+      50% { opacity: .6; text-shadow: 0 0 8px rgba(74,222,128,.8); }
+    }
     .hero h1 { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.15; color: #fff; margin-bottom: 20px; max-width: 600px; }
     .hero h1 em { font-style: italic; color: #7FD1DE; }
     .hero__sub { font-size: 1.05rem; color: rgba(255,255,255,.8); line-height: 1.7; max-width: 500px; margin-bottom: 32px; }
