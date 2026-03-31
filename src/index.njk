@@ -261,7 +261,8 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
   <div class="container">
     <div class="hero__inner">
       <div>
-        <div class="hero__badge hero__badge--{{ urgency.level }} fade-up">{{ urgency.text }}</div>
+        {% if "🔴" in urgency.text %}{% set badge_level = "rood" %}{% elif "🟠" in urgency.text %}{% set badge_level = "oranje" %}{% else %}{% set badge_level = "groen" %}{% endif %}
+        <div class="hero__badge hero__badge--{{ badge_level }} fade-up">{{ urgency.text | replace("🟢 ", "") | replace("🟠 ", "") | replace("🔴 ", "") }}</div>
         <h1 class="fade-up">
           {{ hero.title_1 }}<br>
           <em>{{ hero.title_2 }}</em><br>
