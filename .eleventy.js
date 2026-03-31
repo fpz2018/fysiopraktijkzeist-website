@@ -1,4 +1,10 @@
 module.exports = function(eleventyConfig) {
+  // Limit filter voor Nunjucks
+  eleventyConfig.addFilter("limit", function(value, count) {
+    if (!Array.isArray(value)) return value;
+    return value.slice(0, count);
+  });
+
   // Kopieer statische bestanden
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/admin");
