@@ -37,9 +37,9 @@ We behandelen een breed scala aan klachten. De meest voorkomende:
 
 ## Hoe werkt een eerste afspraak?
 
-Bij je eerste bezoek nemen we uitgebreid de tijd. Reken op zo'n 30 tot 40 minuten. We beginnen met je verhaal: wat zijn je klachten, hoe lang heb je ze al, wat heb je zelf al geprobeerd. Daarna volgt het lichamelijk onderzoek. 
+Voor een intake reserveren we 50 minuten. De intake zelf, het onderzoek en een eerste stukje behandeling nemen daar zo'n 40 tot 45 minuten van in beslag. We beginnen met je verhaal: wat zijn je klachten, hoe lang heb je ze al, wat heb je zelf al geprobeerd. Daarna volgt het lichamelijk onderzoek. Als er aanleiding voor is, doen we aanvullend echografisch onderzoek.
 
-Op basis daarvan bespreken we wat er aan de hand is en wat het plan is. Hoeveel behandelingen je nodig hebt verschilt per klacht. Soms zijn drie behandelingen genoeg, soms heb je er tien of meer nodig. We zijn daar eerlijk over. Het heeft geen zin om mensen langer te laten komen dan nodig is.
+Op basis daarvan bespreken we wat er aan de hand is en wat het plan is. Vervolgbehandelingen duren 25 minuten, waarvan je zo'n 20 minuten daadwerkelijk behandeld wordt. Hoeveel behandelingen je nodig hebt verschilt per klacht. Soms zijn drie behandelingen genoeg, soms heb je er tien of meer nodig. We zijn daar eerlijk over. Het heeft geen zin om mensen langer te laten komen dan nodig is.
 
 ## Wie behandelen je?
 
@@ -139,9 +139,4 @@ Twijfel je over je vergoeding? Bel of app ons even, dan zoeken we het samen uit.
       "name": "Heeft Fysiopraktijk Zeist echografie?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, wij beschikken over musculoskeletale echografie (MSU) waarmee we direct in de behandelkamer spieren, pezen en gewrichten kunnen beoordelen. Dit voorkomt onnodige doorverwijzingen naar het ziekenhuis."
-      }
-    }
-  ]
-}
-</script>
+        "text": "Ja, wij beschikken over musculoskeletale echografie (MSU) waarmee we direct in de behandelkamer spieren, pezen en gewrichten kunnen beoordelen. Dit voorkomt onnodig

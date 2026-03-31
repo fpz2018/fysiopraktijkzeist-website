@@ -30,7 +30,7 @@ Bij je eerste bezoek onderzoeken we eerst grondig waar het probleem zit. Met [ec
 
 De behandeling zelf voelt voor de meeste mensen als druk op of rond het gewricht, soms gecombineerd met een kleine beweging. Je hoort daar soms een "knak" bij, maar dat hoeft niet. Het doel is altijd hetzelfde: het gewricht weer vrijer laten bewegen.
 
-Een behandeling duurt zo'n 25 tot 30 minuten. We combineren manuele therapie vrijwel altijd met oefeningen die je thuis doet. Het gewricht mobiliseren is stap één, maar de spieren moeten vervolgens sterk genoeg zijn om het gewricht in die nieuwe bewegingsvrijheid te ondersteunen. Anders komt de stijfheid gewoon terug.
+Een vervolgbehandeling duurt 25 minuten, waarvan zo'n 20 minuten daadwerkelijke behandeltijd. Bij een eerste afspraak (intake) reserveren we 50 minuten, zodat we rustig de tijd hebben voor een goed onderzoek. We combineren manuele therapie vrijwel altijd met oefeningen die je thuis doet. Het gewricht mobiliseren is stap één, maar de spieren moeten vervolgens sterk genoeg zijn om het gewricht in die nieuwe bewegingsvrijheid te ondersteunen. Anders komt de stijfheid gewoon terug.
 
 ## Drie methoden, afgestemd op jouw klacht
 
