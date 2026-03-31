@@ -68,6 +68,33 @@ collections:
           - { label: "Subtekst", name: "subtitle", widget: "text" }
           - { label: "Badge tekst", name: "badge", widget: "string" }
 
+      - label: "Beschikbaarheid badge (hero)"
+        name: "urgency"
+        file: "src/_data/urgency.json"
+        fields:
+          - label: "Urgentieniveau"
+            name: "level"
+            widget: "select"
+            options:
+              - { label: "🟢 Groen — ruim plek", value: "groen" }
+              - { label: "🟠 Oranje — beperkt plek", value: "oranje" }
+              - { label: "🔴 Rood — bijna vol", value: "rood" }
+            default: "groen"
+            hint: "Kies de kleur op basis van hoe druk de agenda is"
+          - label: "Badge tekst"
+            name: "text"
+            widget: "select"
+            options:
+              - "Nieuwe patiënten welkom — geen verwijzing nodig"
+              - "Deze week nog plek — plan direct uw afspraak"
+              - "Vandaag en morgen nog plek — bel of app ons"
+              - "Nog enkele plekken deze week — wacht niet te lang"
+              - "Beperkt plek deze week — neem snel contact op"
+              - "Bijna vol deze week — bel vandaag nog"
+              - "Vol deze week — eerste plek volgende week beschikbaar"
+            default: "Nieuwe patiënten welkom — geen verwijzing nodig"
+            hint: "Kies een tekst die past bij de drukte. Wees eerlijk!"
+
       - label: "Openingstijden"
         name: "hours"
         file: "src/_data/hours.json"
