@@ -99,22 +99,20 @@
         "price_note": "€39 per behandeling",
         "features": [
           "5 fysiotherapiebehandelingen",
-          "Geldig 12 maanden",
-          "Vrij in te plannen",
-          "Alle therapeuten inzetbaar"
+          "12 maanden geldig",
+          "Flexibel inplannen"
         ],
         "highlight": false,
         "mollie_url": ""
       },
       {
         "name": "10 behandelingen",
-        "price": "370",
-        "price_note": "€37 per behandeling — bespaar €20",
+        "price": "375",
+        "price_note": "€37,50 per behandeling",
         "features": [
           "10 fysiotherapiebehandelingen",
-          "Geldig 12 maanden",
-          "Vrij in te plannen",
-          "Alle therapeuten inzetbaar"
+          "12 maanden geldig",
+          "Flexibel inplannen"
         ],
         "highlight": true,
         "mollie_url": ""
