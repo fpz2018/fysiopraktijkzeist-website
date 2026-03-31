@@ -1,0 +1,25 @@
+{
+  "name": "fysiopraktijkzeist-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpz2018/fysiopraktijkzeist-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fpz2018/fysiopraktijkzeist-website/issues"
+  },
+  "homepage": "https://github.com/fpz2018/fysiopraktijkzeist-website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

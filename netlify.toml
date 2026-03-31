@@ -1,5 +1,6 @@
 [build]
-  publish = "."
+  command = "npx @11ty/eleventy"
+  publish = "_site"
 
 [[redirects]]
   from = "/admin/*"
@@ -9,5 +10,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
