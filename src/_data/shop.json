@@ -1,0 +1,84 @@
+{
+  "fitness": {
+    "title": "FysioFitness Abonnementen",
+    "intro": "Beweeg onder begeleiding van onze fysiotherapeuten. Geschikt voor alle leeftijden en niveaus — ook bij klachten.",
+    "items": [
+      {
+        "name": "1× per week",
+        "period": "per maand",
+        "price": "49",
+        "price_note": "per maand, per kalendermaand opzegbaar",
+        "features": ["1 groepsles per week", "Onder begeleiding van een fysiotherapeut", "Geschikt bij klachten en beperkingen", "Opzegbaar per kalendermaand"],
+        "highlight": false,
+        "mollie_url": ""
+      },
+      {
+        "name": "2× per week",
+        "period": "per maand",
+        "price": "89",
+        "price_note": "per maand, per kalendermaand opzegbaar",
+        "features": ["2 groepslessen per week", "Onder begeleiding van een fysiotherapeut", "Geschikt bij klachten en beperkingen", "Opzegbaar per kalendermaand"],
+        "highlight": true,
+        "mollie_url": ""
+      },
+      {
+        "name": "1× per week",
+        "period": "per kwartaal",
+        "price": "135",
+        "price_note": "per kwartaal — bespaar 10%",
+        "features": ["1 groepsles per week", "Onder begeleiding van een fysiotherapeut", "Geschikt bij klachten en beperkingen", "Betaling per kwartaal vooraf"],
+        "highlight": false,
+        "mollie_url": ""
+      },
+      {
+        "name": "2× per week",
+        "period": "per kwartaal",
+        "price": "240",
+        "price_note": "per kwartaal — bespaar 10%",
+        "features": ["2 groepslessen per week", "Onder begeleiding van een fysiotherapeut", "Geschikt bij klachten en beperkingen", "Betaling per kwartaal vooraf"],
+        "highlight": false,
+        "mollie_url": ""
+      },
+      {
+        "name": "1× per week",
+        "period": "per jaar",
+        "price": "499",
+        "price_note": "per jaar — bespaar 15%",
+        "features": ["1 groepsles per week", "Onder begeleiding van een fysiotherapeut", "Geschikt bij klachten en beperkingen", "Betaling per jaar vooraf"],
+        "highlight": false,
+        "mollie_url": ""
+      },
+      {
+        "name": "2× per week",
+        "period": "per jaar",
+        "price": "899",
+        "price_note": "per jaar — bespaar 15%",
+        "features": ["2 groepslessen per week", "Onder begeleiding van een fysiotherapeut", "Geschikt bij klachten en beperkingen", "Betaling per jaar vooraf"],
+        "highlight": false,
+        "mollie_url": ""
+      }
+    ]
+  },
+  "strippenkaarten": {
+    "title": "Strippenkaarten Fysiotherapie",
+    "intro": "Flexibel een behandeling inplannen zonder abonnement. Strippenkaarten zijn 12 maanden geldig na aankoop.",
+    "items": [
+      {
+        "name": "5 behandelingen",
+        "price": "195",
+        "price_note": "€39 per behandeling",
+        "features": ["5 fysiotherapiebehandelingen", "Geldig 12 maanden", "Vrij in te plannen", "Alle therapeuten inzetbaar"],
+        "highlight": false,
+        "mollie_url": ""
+      },
+      {
+        "name": "10 behandelingen",
+        "price": "370",
+        "price_note": "€37 per behandeling — bespaar €20",
+        "features": ["10 fysiotherapiebehandelingen", "Geldig 12 maanden", "Vrij in te plannen", "Alle therapeuten inzetbaar"],
+        "highlight": true,
+        "mollie_url": ""
+      }
+    ]
+  }
+}

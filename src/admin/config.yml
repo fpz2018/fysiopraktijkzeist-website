@@ -134,3 +134,47 @@ collections:
             widget: "list"
             fields:
               - { label: "Tekst", name: "text", widget: "string" }
+
+      - label: "Shop — FysioFitness abonnementen"
+        name: "shop_fitness"
+        file: "src/_data/shop.json"
+        fields:
+          - label: "FysioFitness"
+            name: "fitness"
+            widget: "object"
+            fields:
+              - { label: "Sectietitel", name: "title", widget: "string" }
+              - { label: "Intro tekst", name: "intro", widget: "text" }
+              - label: "Producten"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Naam (bijv. 1× per week)", name: "name", widget: "string" }
+                  - { label: "Periode (bijv. per maand)", name: "period", widget: "string" }
+                  - { label: "Prijs (alleen cijfers)", name: "price", widget: "string" }
+                  - { label: "Prijstoelichting", name: "price_note", widget: "string" }
+                  - label: "Kenmerken"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Kenmerk", name: "item", widget: "string" }
+                  - { label: "Uitgelicht (meest gekozen)", name: "highlight", widget: "boolean", default: false }
+                  - { label: "Mollie betaallink (leeg = telefonisch aanmelden)", name: "mollie_url", widget: "string", required: false }
+          - label: "Strippenkaarten"
+            name: "strippenkaarten"
+            widget: "object"
+            fields:
+              - { label: "Sectietitel", name: "title", widget: "string" }
+              - { label: "Intro tekst", name: "intro", widget: "text" }
+              - label: "Producten"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Naam (bijv. 5 behandelingen)", name: "name", widget: "string" }
+                  - { label: "Prijs (alleen cijfers)", name: "price", widget: "string" }
+                  - { label: "Prijstoelichting", name: "price_note", widget: "string" }
+                  - label: "Kenmerken"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Kenmerk", name: "item", widget: "string" }
+                  - { label: "Uitgelicht (meest gekozen)", name: "highlight", widget: "boolean", default: false }
+                  - { label: "Mollie betaallink (leeg = telefonisch aanmelden)", name: "mollie_url", widget: "string", required: false }
