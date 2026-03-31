@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "title": "Geen verwijzing nodig", "icon": "🚀", "description": "Direct bij ons terecht, zonder eerst naar de huisarts. Bel of WhatsApp ons voor een afspraak." },
+    { "title": "Snel een afspraak", "icon": "⚡", "description": "Gemiddeld binnen 3 werkdagen geholpen. Avondafspraken op dinsdag mogelijk tot 20:00." },
+    { "title": "Alles onder één dak", "icon": "🏠", "description": "Fysiotherapie, manuele therapie, echografie, dry needling en fysiofitness." },
+    { "title": "Echografie in eigen praktijk", "icon": "🔬", "description": "Marc de Jong is MSU-gecertificeerd echografist — zeldzaam in de regio Utrecht." },
+    { "title": "9,2 / 10 beoordeling", "icon": "⭐", "description": "102 patiënten beoordeelden ons uitstekend op ZorgkaartNederland." },
+    { "title": "Persoonlijk behandelplan", "icon": "🤝", "description": "Afgestemd op uw klacht, doelen en leefstijl. Wij luisteren en kijken verder dan het symptoom." }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "name": "Fysiotherapie", "icon": "🦴", "description": "Bij rugpijn, knieklachten, schouders, sportblessures en revalidatie na een operatie.", "url": "/onze-diensten/fysiotherapie" },
+    { "name": "Manuele Therapie", "icon": "🖐", "description": "Gerichte behandeling van gewrichten en wervelkolom. Snel resultaat bij acute klachten.", "url": "/onze-diensten/manuele-therapie" },
+    { "name": "Dry Needling", "icon": "💉", "description": "Effectief bij spierpijn, triggerpoints, nekpijn, hoofdpijn en chronische spanning.", "url": "/onze-diensten/dry-needling" },
+    { "name": "Echografie (MSU)", "icon": "🔍", "description": "Diagnostisch onderzoek van spieren, pezen en gewrichten voor een nauwkeurige diagnose.", "url": "/onze-diensten/echografie" },
+    { "name": "FysioFitness", "icon": "🏋", "description": "Begeleid kracht- en conditietraining voor herstel en vitaliteit op elke leeftijd.", "url": "/onze-diensten/fysiofitness" },
+    { "name": "Valpreventie", "icon": "🛡", "description": "Voor senioren — word sterker, stabieler en zelfverzekerder in uw dagelijkse beweging.", "url": "/onze-diensten/valpreventie" }
+  ]
+}

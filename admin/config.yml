@@ -6,6 +6,8 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+
+  # ── Blog ──────────────────────────────────────────────────
   - name: "blog"
     label: "Blog artikelen"
     folder: "_posts"
@@ -14,23 +16,121 @@ collections:
     fields:
       - { label: "Titel", name: "title", widget: "string" }
       - { label: "Datum", name: "date", widget: "datetime" }
-      - { label: "Categorie", name: "category", widget: "select", options: ["Artrose", "Herstel", "Leefstijl", "Pijn", "Sport", "Voeding"] }
+      - label: "Categorie"
+        name: "category"
+        widget: "select"
+        options: ["Artrose", "Herstel", "Leefstijl", "Pijn", "Sport", "Voeding", "Algemeen"]
       - { label: "Samenvatting", name: "excerpt", widget: "text" }
       - { label: "Uitgelichte afbeelding", name: "thumbnail", widget: "image", required: false }
       - { label: "Inhoud", name: "body", widget: "markdown" }
       - { label: "Gepubliceerd", name: "published", widget: "boolean", default: true }
 
+  # ── Pagina instellingen ───────────────────────────────────
   - name: "settings"
     label: "Website instellingen"
     files:
-      - label: "Algemeen"
+
+      - label: "Praktijk info"
         name: "general"
-        file: "_data/settings.json"
+        file: "_data/general.json"
         fields:
           - { label: "Praktijknaam", name: "name", widget: "string" }
           - { label: "Telefoonnummer", name: "phone", widget: "string" }
-          - { label: "WhatsApp nummer", name: "whatsapp", widget: "string" }
+          - { label: "WhatsApp nummer (met landcode, zonder +)", name: "whatsapp", widget: "string" }
           - { label: "E-mailadres", name: "email", widget: "string" }
           - { label: "Adres", name: "address", widget: "string" }
-          - { label: "Aantal beoordelingen", name: "review_count", widget: "number" }
           - { label: "Gemiddelde beoordeling", name: "review_score", widget: "string" }
+          - { label: "Aantal beoordelingen", name: "review_count", widget: "number" }
+
+      - label: "Hero sectie"
+        name: "hero"
+        file: "_data/hero.json"
+        fields:
+          - { label: "Hoofdtekst regel 1", name: "title_1", widget: "string" }
+          - { label: "Hoofdtekst regel 2 (cursief)", name: "title_2", widget: "string" }
+          - { label: "Hoofdtekst regel 3", name: "title_3", widget: "string" }
+          - { label: "Subtekst", name: "subtitle", widget: "text" }
+          - { label: "Badge tekst", name: "badge", widget: "string" }
+
+      - label: "Openingstijden"
+        name: "hours"
+        file: "_data/hours.json"
+        fields:
+          - { label: "Maandag", name: "monday", widget: "string" }
+          - { label: "Dinsdag", name: "tuesday", widget: "string" }
+          - { label: "Woensdag", name: "wednesday", widget: "string" }
+          - { label: "Donderdag", name: "thursday", widget: "string" }
+          - { label: "Vrijdag", name: "friday", widget: "string" }
+          - { label: "Telefoon bereikbaar", name: "phone_hours", widget: "string" }
+
+      - label: "Team"
+        name: "team"
+        file: "_data/team.json"
+        fields:
+          - label: "Teamleden"
+            name: "members"
+            widget: "list"
+            fields:
+              - { label: "Naam", name: "name", widget: "string" }
+              - { label: "Initialen", name: "initials", widget: "string" }
+              - { label: "Specialisatie", name: "specialty", widget: "string" }
+              - { label: "Foto", name: "photo", widget: "image", required: false }
+
+      - label: "Diensten"
+        name: "services"
+        file: "_data/services.json"
+        fields:
+          - label: "Behandelingen"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Naam", name: "name", widget: "string" }
+              - { label: "Icoon (emoji)", name: "icon", widget: "string" }
+              - { label: "Omschrijving", name: "description", widget: "text" }
+              - { label: "URL", name: "url", widget: "string" }
+
+      - label: "Klachten (Herkent u dit?)"
+        name: "complaints"
+        file: "_data/complaints.json"
+        fields:
+          - label: "Klachten"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Naam", name: "name", widget: "string" }
+              - { label: "Icoon (emoji)", name: "icon", widget: "string" }
+              - { label: "Omschrijving", name: "description", widget: "string" }
+
+      - label: "USP's (Wat ons onderscheidt)"
+        name: "usps"
+        file: "_data/usps.json"
+        fields:
+          - label: "USP's"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Icoon (emoji)", name: "icon", widget: "string" }
+              - { label: "Omschrijving", name: "description", widget: "text" }
+
+      - label: "Beoordelingen"
+        name: "reviews"
+        file: "_data/reviews.json"
+        fields:
+          - label: "Reviews"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Citaat", name: "quote", widget: "text" }
+              - { label: "Naam patiënt (of 'Patiënt')", name: "name", widget: "string" }
+              - { label: "Bron", name: "source", widget: "string", default: "via ZorgkaartNederland" }
+
+      - label: "Trust bar"
+        name: "trust"
+        file: "_data/trust.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Tekst", name: "text", widget: "string" }
