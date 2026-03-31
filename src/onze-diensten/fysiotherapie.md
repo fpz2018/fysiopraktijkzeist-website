@@ -1,9 +1,10 @@
 ---
-title: "Fysiotherapie in Zeist — Fysiopraktijk Zeist"
-excerpt: "Fysiotherapeut in Zeist nodig? Bij Fysiopraktijk Zeist kun je zonder verwijzing terecht voor rugpijn, knieklachten, schouderklachten, sportblessures en revalidatie. Inclusief echografie in de praktijk."
+title: Fysiotherapie in Zeist — Fysiopraktijk Zeist
+excerpt: Fysiotherapeut in Zeist nodig? Bij Fysiopraktijk Zeist kun je zonder
+  verwijzing terecht voor rugpijn, knieklachten, schouderklachten,
+  sportblessures en revalidatie. Inclusief echografie in de praktijk.
 category: Behandelingen
 ---
-
 ## Fysiotherapie bij Fysiopraktijk Zeist
 
 De meeste mensen komen bij ons terecht met een klacht die ze al een tijdje hebben. Een rug die steeds vaker opspelt. Een knie die niet meer wil na het hardlopen. Een schouder die 's nachts wakker houdt. Soms is het iets acuuts, een blessure of een val, maar vaker is het iets dat geleidelijk erger is geworden.
@@ -36,7 +37,7 @@ We behandelen een breed scala aan klachten. De meest voorkomende:
 
 ## Hoe werkt een eerste afspraak?
 
-Bij je eerste bezoek nemen we uitgebreid de tijd. Reken op zo'n 30 tot 40 minuten. We beginnen met je verhaal: wat zijn je klachten, hoe lang heb je ze al, wat heb je zelf al geprobeerd. Daarna volgt het lichamelijk onderzoek. Als er aanleiding voor is, doen we aanvullend echografisch onderzoek.
+Bij je eerste bezoek nemen we uitgebreid de tijd. Reken op zo'n 30 tot 40 minuten. We beginnen met je verhaal: wat zijn je klachten, hoe lang heb je ze al, wat heb je zelf al geprobeerd. Daarna volgt het lichamelijk onderzoek. 
 
 Op basis daarvan bespreken we wat er aan de hand is en wat het plan is. Hoeveel behandelingen je nodig hebt verschilt per klacht. Soms zijn drie behandelingen genoeg, soms heb je er tien of meer nodig. We zijn daar eerlijk over. Het heeft geen zin om mensen langer te laten komen dan nodig is.
 
