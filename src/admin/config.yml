@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
+media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
@@ -10,7 +10,7 @@ collections:
   # ── Blog ──────────────────────────────────────────────────
   - name: "blog"
     label: "Blog artikelen"
-    folder: "_posts"
+    folder: "src/blog"
     create: true
     slug: "{{slug}}"
     fields:
@@ -32,7 +32,7 @@ collections:
 
       - label: "Praktijk info"
         name: "general"
-        file: "_data/general.json"
+        file: "src/_data/general.json"
         fields:
           - { label: "Praktijknaam", name: "name", widget: "string" }
           - { label: "Telefoonnummer", name: "phone", widget: "string" }
@@ -44,7 +44,7 @@ collections:
 
       - label: "Hero sectie"
         name: "hero"
-        file: "_data/hero.json"
+        file: "src/_data/hero.json"
         fields:
           - { label: "Hoofdtekst regel 1", name: "title_1", widget: "string" }
           - { label: "Hoofdtekst regel 2 (cursief)", name: "title_2", widget: "string" }
@@ -54,7 +54,7 @@ collections:
 
       - label: "Openingstijden"
         name: "hours"
-        file: "_data/hours.json"
+        file: "src/_data/hours.json"
         fields:
           - { label: "Maandag", name: "monday", widget: "string" }
           - { label: "Dinsdag", name: "tuesday", widget: "string" }
@@ -65,7 +65,7 @@ collections:
 
       - label: "Team"
         name: "team"
-        file: "_data/team.json"
+        file: "src/_data/team.json"
         fields:
           - label: "Teamleden"
             name: "members"
@@ -78,7 +78,7 @@ collections:
 
       - label: "Diensten"
         name: "services"
-        file: "_data/services.json"
+        file: "src/_data/services.json"
         fields:
           - label: "Behandelingen"
             name: "items"
@@ -91,7 +91,7 @@ collections:
 
       - label: "Klachten (Herkent u dit?)"
         name: "complaints"
-        file: "_data/complaints.json"
+        file: "src/_data/complaints.json"
         fields:
           - label: "Klachten"
             name: "items"
@@ -103,7 +103,7 @@ collections:
 
       - label: "USP's (Wat ons onderscheidt)"
         name: "usps"
-        file: "_data/usps.json"
+        file: "src/_data/usps.json"
         fields:
           - label: "USP's"
             name: "items"
@@ -115,7 +115,7 @@ collections:
 
       - label: "Beoordelingen"
         name: "reviews"
-        file: "_data/reviews.json"
+        file: "src/_data/reviews.json"
         fields:
           - label: "Reviews"
             name: "items"
@@ -127,7 +127,7 @@ collections:
 
       - label: "Trust bar"
         name: "trust"
-        file: "_data/trust.json"
+        file: "src/_data/trust.json"
         fields:
           - label: "Items"
             name: "items"
