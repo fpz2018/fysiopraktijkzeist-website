@@ -1,0 +1,116 @@
+---
+title: Bedankt voor je aanmelding | Fysiopraktijk Zeist
+description: Bedankt voor je aankoop bij Fysiopraktijk Zeist. We nemen snel contact met je op.
+---
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:#1B5E6B; --teal-light:#2A7F91; --teal-pale:#EBF5F7;
+      --orange:#D96B2F; --orange-light:#F5834A; --cream:#F8F5EF;
+      --dark:#1A2332; --gray:#5A6778; --gray-light:#E8E4DE;
+      --radius:12px; --shadow:0 4px 24px rgba(27,94,107,.10);
+      --font-serif:'Fraunces',Georgia,serif; --font-sans:'Inter',system-ui,sans-serif;
+    }
+    body { font-family: var(--font-sans); background: var(--cream); color: var(--dark); line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 50px; font-family: var(--font-sans); font-size: .95rem; font-weight: 600; cursor: pointer; border: 2px solid transparent; transition: all .2s ease; white-space: nowrap; text-decoration: none; }
+    .btn-primary { background: var(--orange); color: #fff; border-color: var(--orange); }
+    .btn-primary:hover { background: var(--orange-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(217,107,47,.35); color: #fff; }
+    .btn-outline { background: transparent; color: var(--teal); border-color: var(--teal); }
+    .btn-outline:hover { background: var(--teal); color: #fff; }
+    /* Nav */
+    .nav { background: rgba(248,245,239,.96); border-bottom: 1px solid var(--gray-light); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav__logo { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--teal); line-height: 1.1; }
+    .nav__logo span { display: block; font-size: .68rem; font-weight: 400; color: var(--gray); font-family: var(--font-sans); letter-spacing: .05em; text-transform: uppercase; }
+    /* Bedankt sectie */
+    .bedankt { flex: 1; display: flex; align-items: center; justify-content: center; padding: 64px 24px; }
+    .bedankt__card { background: #fff; border-radius: 20px; box-shadow: var(--shadow); max-width: 600px; width: 100%; padding: 56px 48px; text-align: center; }
+    .bedankt__icon { width: 80px; height: 80px; background: #DCFCE7; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; margin: 0 auto 28px; }
+    .bedankt__card h1 { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
+    .bedankt__card .lead { font-size: 1.05rem; color: var(--gray); line-height: 1.7; margin-bottom: 36px; }
+    .stappen { display: flex; flex-direction: column; gap: 0; margin-bottom: 36px; text-align: left; }
+    .stap { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--gray-light); }
+    .stap:last-child { border-bottom: none; }
+    .stap__nr { width: 32px; height: 32px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 700; font-size: .85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .stap__body strong { display: block; font-size: .95rem; font-weight: 600; color: var(--dark); margin-bottom: 2px; }
+    .stap__body span { font-size: .85rem; color: var(--gray); }
+    .bedankt__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    /* Footer */
+    .footer-mini { background: var(--dark); color: rgba(255,255,255,.5); padding: 20px 0; font-size: .8rem; text-align: center; }
+    @media (max-width: 600px) { .bedankt__card { padding: 36px 24px; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">
+      {{ general.name }}
+      <span>Fysiotherapeut zonder verwijzing</span>
+    </a>
+  </div>
+</nav>
+
+<div class="bedankt">
+  <div class="bedankt__card">
+    <div class="bedankt__icon">✓</div>
+    <h1>Bedankt voor je aanmelding!</h1>
+    <p class="lead">Je betaling is ontvangen. We nemen zo snel mogelijk — uiterlijk de volgende werkdag — contact met je op om alles verder in te plannen.</p>
+
+    <div class="stappen">
+      <div class="stap">
+        <div class="stap__nr">1</div>
+        <div class="stap__body">
+          <strong>Betaling bevestigd</strong>
+          <span>Je ontvangt een betalingsbevestiging per e-mail van Mollie.</span>
+        </div>
+      </div>
+      <div class="stap">
+        <div class="stap__nr">2</div>
+        <div class="stap__body">
+          <strong>Wij nemen contact op</strong>
+          <span>We bellen of appen je om de verdere afspraken te maken en je eerste sessie in te plannen.</span>
+        </div>
+      </div>
+      <div class="stap">
+        <div class="stap__nr">3</div>
+        <div class="stap__body">
+          <strong>Automatische incasso</strong>
+          <span>Voor abonnementen stellen we samen de maandelijkse incasso in, zodat je nergens meer aan hoeft te denken.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bedankt__actions">
+      <a href="/" class="btn btn-primary">Terug naar de website</a>
+      <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-outline">💬 WhatsApp ons</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer-mini">
+  © 2026 {{ general.name }} — <a href="tel:{{ general.phone }}" style="color:rgba(255,255,255,.5)">{{ general.phone }}</a>
+</div>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) { window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; }); }
+    });
+  }
+</script>
+</body>
+</html>
