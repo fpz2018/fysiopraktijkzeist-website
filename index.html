@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fysiotherapeut in Zeist | Fysiopraktijk Zeist — Geen verwijzing nodig</title>
   <meta name="description" content="Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry needling, echografie en meer. Gemiddeld binnen 3 dagen geholpen. Bel 030-7210771." />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -652,6 +653,15 @@
   document.querySelectorAll('.pain-grid, .usp-grid, .diensten-grid, .reviews-grid, .blog-grid, .team-grid').forEach(grid => {
     grid.querySelectorAll('.fade-up').forEach((card, i) => { card.style.transitionDelay = `${i * 70}ms`; });
   });
+
+  // Netlify Identity redirect naar /admin na inloggen
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+      }
+    });
+  }
 
   // Bel me terug form
   function handleCallback(e) {
