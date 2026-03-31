@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: fpz2018/fysiopraktijkzeist-website
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog artikelen"
+    folder: "_posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Datum", name: "date", widget: "datetime" }
+      - { label: "Categorie", name: "category", widget: "select", options: ["Artrose", "Herstel", "Leefstijl", "Pijn", "Sport", "Voeding"] }
+      - { label: "Samenvatting", name: "excerpt", widget: "text" }
+      - { label: "Uitgelichte afbeelding", name: "thumbnail", widget: "image", required: false }
+      - { label: "Inhoud", name: "body", widget: "markdown" }
+      - { label: "Gepubliceerd", name: "published", widget: "boolean", default: true }
+
+  - name: "settings"
+    label: "Website instellingen"
+    files:
+      - label: "Algemeen"
+        name: "general"
+        file: "_data/settings.json"
+        fields:
+          - { label: "Praktijknaam", name: "name", widget: "string" }
+          - { label: "Telefoonnummer", name: "phone", widget: "string" }
+          - { label: "WhatsApp nummer", name: "whatsapp", widget: "string" }
+          - { label: "E-mailadres", name: "email", widget: "string" }
+          - { label: "Adres", name: "address", widget: "string" }
+          - { label: "Aantal beoordelingen", name: "review_count", widget: "number" }
+          - { label: "Gemiddelde beoordeling", name: "review_score", widget: "string" }
