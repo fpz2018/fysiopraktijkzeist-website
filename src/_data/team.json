@@ -1,10 +1,35 @@
 {
   "members": [
-    { "name": "Marc de Jong", "initials": "M", "specialty": "BIG 1990 · CSCS · MSU Echografie" },
-    { "name": "Cristina Sonnevelt", "initials": "C", "specialty": "~30 jaar ervaring · Voetentrainer" },
-    { "name": "Arie Holdijk", "initials": "A", "specialty": "Handtherapie · Claudicatio" },
-    { "name": "Gillian Bohan", "initials": "G", "specialty": "COPD · COVID revalidatie" },
-    { "name": "Robin Rasink", "initials": "R", "specialty": "McKenzie · Valpreventie" },
-    { "name": "Giovanni Lafeber", "initials": "G", "specialty": "Sportblessures · Algemeen" }
+    {
+      "name": "Marc de Jong",
+      "initials": "M",
+      "specialty": "BIG 1990 · CSCS · MSU Echografie",
+      "photo": ""
+    },
+    {
+      "name": "Cristina Sonnevelt",
+      "initials": "C",
+      "specialty": "~30 jaar ervaring · Voetentrainer"
+    },
+    {
+      "name": "Arie Holdijk",
+      "initials": "A",
+      "specialty": "Handtherapie · Claudicatio"
+    },
+    {
+      "name": "Gillian Bohan",
+      "initials": "G",
+      "specialty": "COPD · COVID revalidatie"
+    },
+    {
+      "name": "Robin Rasink",
+      "initials": "R",
+      "specialty": "McKenzie · Valpreventie"
+    },
+    {
+      "name": "Giovanni Lafeber",
+      "initials": "G",
+      "specialty": "Sportblessures · Algemeen"
+    }
   ]
 }
