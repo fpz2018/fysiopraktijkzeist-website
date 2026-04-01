@@ -5,6 +5,8 @@
     { "name": "Nekpijn & hoofdpijn", "icon": "💆", "description": "Spanning, whiplash of beeldschermklachten" },
     { "name": "Schouderklachten", "icon": "💪", "description": "Frozen shoulder, impingement of peesletsel" },
     { "name": "Sportblessures", "icon": "🏃", "description": "Enkelverzwikking, spierscheur, overbelasting" },
-    { "name": "Vitaler worden", "icon": "🌿", "description": "Meer kracht, betere conditie, gezondere leefstijl" }
+    { "name": "Vitaler worden", "icon": "🌿", "description": "Meer kracht, betere conditie, gezondere leefstijl" },
+    { "name": "Hand- & polsklachten", "icon": "🤚", "description": "Artrose, peesletsel, carpaaltunnelsyndroom" },
+    { "name": "Voet- & enkelklachten", "icon": "🦶", "description": "Hielspoor, enkelblessure, loopproblemen" }
   ]
 }
