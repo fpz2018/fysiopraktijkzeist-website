@@ -106,10 +106,12 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     .hero__card p strong { color: var(--dark); display: block; margin-top: 10px; font-size: .85rem; }
     .hero__divider { width: 100%; height: 1px; background: rgba(0,0,0,.08); margin: 14px 0; }
     .hero__card-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--teal-pale); color: var(--teal); border-radius: 50px; padding: 5px 12px; font-size: .75rem; font-weight: 600; }
-    .trust-bar { background: var(--dark); padding: 14px 0; }
-    .trust-bar__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 36px; }
-    .trust-item { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: rgba(255,255,255,.8); font-weight: 500; }
+    .trust-bar { background: var(--dark); padding: 14px 0; overflow: hidden; }
+    .trust-bar__inner { display: flex; flex-wrap: nowrap; align-items: center; justify-content: center; gap: 0 24px; overflow-x: auto; scrollbar-width: none; }
+    .trust-bar__inner::-webkit-scrollbar { display: none; }
+    .trust-item { display: flex; align-items: center; gap: 6px; font-size: .8rem; color: rgba(255,255,255,.8); font-weight: 500; white-space: nowrap; flex-shrink: 0; }
     .trust-item__check { color: #4ADE80; font-weight: 700; }
+    @media (max-width: 900px) { .trust-bar__inner { justify-content: flex-start; padding: 0 16px; } }
     .section { padding: 72px 0; }
     .section--white { background: #fff; }
     .section--teal { background: var(--teal); }
