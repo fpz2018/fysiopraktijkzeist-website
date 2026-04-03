@@ -174,7 +174,8 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     .agg-info span { font-size: .8rem; color: var(--gray); }
     .agg-stars { color: #F59E0B; font-size: .9rem; margin-top: 4px; }
     .agg-divider { width: 1px; height: 40px; background: var(--gray-light); }
-    .team-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 40px; }
+    .team-photo { width: 100%; max-width: 720px; border-radius: var(--radius); margin: 32px auto 0; box-shadow: var(--shadow); }
+    .team-grid { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 32px; }
     .team-pill { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--gray-light); border-radius: 50px; padding: 10px 20px 10px 10px; transition: box-shadow .2s; }
     .team-pill:hover { box-shadow: var(--shadow); }
     .team-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .9rem; flex-shrink: 0; }
@@ -449,6 +450,7 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     <span class="section-label fade-up">Ons team</span>
     <h2 class="section-title fade-up">{{ team.members | length }} gespecialiseerde therapeuten</h2>
     <p class="section-sub fade-up" style="margin:0 auto">Samen meer dan 100 jaar klinische ervaring.</p>
+    <img src="/images/uploads/groep_versie_december_2024.jpg" alt="Het team van Fysiopraktijk Zeist" class="team-photo fade-up">
     <div class="team-grid">
       {% for member in team.members %}
       <div class="team-pill fade-up">
