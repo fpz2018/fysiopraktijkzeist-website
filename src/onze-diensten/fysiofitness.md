@@ -50,6 +50,10 @@ De FysioFitness wordt begeleid door fysiotherapeuten uit ons team:
 
 [Giovanni Lafeber](/#team) is de sportspecialist in het team. Hij begeleidt sporters die terugkomen van een blessure en hun kracht en conditie weer op peil willen brengen.
 
+## Gecombineerd met Herstel Start
+
+Veel van onze FysioFitness-deelnemers doen ook mee aan [Herstel Start](/onze-diensten/herstel-start), ons leefstijl-assessment. De combinatie is krachtig: we weten niet alleen wat u fysiek aankan, maar ook hoe u slaapt, eet en met stress omgaat. Dat maakt uw trainingsprogramma completer en effectiever.
+
 ## Wat is het verschil met een reguliere sportschool?
 
 Het eerlijke antwoord: als je volledig gezond bent, geen klachten hebt en weet hoe je goed moet trainen, dan is een sportschool prima. Maar als een van die dingen niet helemaal klopt, dan biedt FysioFitness iets wat een sportschool niet kan.

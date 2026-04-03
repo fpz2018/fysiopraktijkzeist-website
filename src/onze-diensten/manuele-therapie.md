@@ -54,6 +54,10 @@ Even voor de duidelijkheid: manuele therapie is een breed vakgebied. Er bestaan 
 
 Als je klacht een complexere manueel therapeutische beoordeling vraagt, verwijzen we je door. Daar zijn we eerlijk in.
 
+## Leefstijl en herstel
+
+Manuele therapie werkt het best als uw lichaam in staat is om te herstellen. Daarom nemen we bij elke nieuwe patiënt ons [Herstel Start](/onze-diensten/herstel-start) leefstijl-assessment af. Soms is een gewricht dat steeds terugkomt niet alleen een mechanisch probleem, maar speelt slaaptekort, stress of ontsteking door voeding een rol.
+
 ## Geen verwijzing nodig
 
 Je kunt rechtstreeks bij ons terecht voor manuele therapie. Geen verwijzing van de huisarts nodig. In de meeste gevallen kun je binnen drie werkdagen bij ons terecht.

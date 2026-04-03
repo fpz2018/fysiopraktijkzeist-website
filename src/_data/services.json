@@ -7,6 +7,7 @@
     { "name": "FysioFitness", "icon": "🏋", "description": "Begeleid kracht- en conditietraining voor herstel en vitaliteit op elke leeftijd.", "url": "/onze-diensten/fysiofitness" },
     { "name": "Valpreventie", "icon": "🛡", "description": "Voor senioren — word sterker, stabieler en zelfverzekerder in uw dagelijkse beweging.", "url": "/onze-diensten/valpreventie" },
     { "name": "Handtherapie", "icon": "🤚", "description": "Gespecialiseerde behandeling van hand-, pols- en vingerklachten na letsel of operatie.", "url": "/onze-diensten/handtherapie" },
-    { "name": "Voetentraining", "icon": "🦶", "description": "Verbetering van voethouding, looppatroon en voetfunctie bij klachten of preventief.", "url": "/onze-diensten/voetentraining" }
+    { "name": "Voetentraining", "icon": "🦶", "description": "Verbetering van voethouding, looppatroon en voetfunctie bij klachten of preventief.", "url": "/onze-diensten/voetentraining" },
+    { "name": "Herstel Start", "icon": "🧬", "description": "Ons unieke leefstijl-assessment: we brengen in kaart wat uw herstel beïnvloedt en verwerken dat in uw behandelplan.", "url": "/onze-diensten/herstel-start" }
   ]
 }

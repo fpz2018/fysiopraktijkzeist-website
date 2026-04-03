@@ -57,6 +57,10 @@ Ons fysiotherapie-team bestaat uit ervaren therapeuten die elk hun eigen special
 
 **[Giovanni Lafeber](/#team)** is de sportspecialist in het team. Sportblessures, revalidatie na sportoperaties, en terugkeer naar sport zijn zijn expertise.
 
+## Herstel Start — onze unieke aanpak
+
+Bij elke nieuwe patiënt nemen we een kort leefstijl-assessment af: [Herstel Start](/onze-diensten/herstel-start). We brengen in kaart hoe u slaapt, drinkt, eet, beweegt en hoeveel stress u ervaart. Die informatie verwerken we in uw behandelplan, zodat we niet alleen de klacht behandelen maar ook de omstandigheden voor herstel verbeteren. Dat maakt een verschil — en het is iets wat vrijwel geen andere praktijk in Zeist doet.
+
 ## Geen verwijzing nodig
 
 Je kunt rechtstreeks bij ons terecht, zonder verwijzing van de huisarts. Dat bespaart je een extra afspraak en wachttijd. In de meeste gevallen kun je binnen drie werkdagen bij ons terecht.
