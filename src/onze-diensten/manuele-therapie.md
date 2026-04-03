@@ -58,11 +58,11 @@ Als je klacht een complexere manueel therapeutische beoordeling vraagt, verwijze
 
 Manuele therapie werkt het best als uw lichaam in staat is om te herstellen. Daarom nemen we bij elke nieuwe patiënt ons [Herstel Start](/onze-diensten/herstel-start) leefstijl-assessment af. Soms is een gewricht dat steeds terugkomt niet alleen een mechanisch probleem, maar speelt slaaptekort, stress of ontsteking door voeding een rol.
 
-## Geen verwijzing nodig
+## Meestal geen verwijzing nodig
 
-Je kunt rechtstreeks bij ons terecht voor manuele therapie. Geen verwijzing van de huisarts nodig. In de meeste gevallen kun je binnen drie werkdagen bij ons terecht.
+Je kunt rechtstreeks bij ons terecht voor manuele therapie. In de meeste gevallen is geen verwijzing van de huisarts nodig en kun je binnen drie werkdagen bij ons terecht.
 
-Bel 030-7210771 of stuur een WhatsApp. We plannen je dan zo snel mogelijk in.
+Bij bepaalde chronische aandoeningen kan een verwijzing nodig zijn voor vergoeding vanuit de basisverzekering. Twijfel je? Bel 030-7210771 of stuur een WhatsApp — we zoeken het samen met je uit.
 
 ## Vergoeding
 

@@ -42,9 +42,9 @@ We werken nauw samen met uw behandelend arts of specialist als dat van toepassin
 
 **[Arie Holdijk](/#team)** is de handtherapiespecialist van Fysiopraktijk Zeist. Hij heeft jarenlange ervaring in de behandeling van hand- en polsklachten en werkt regelmatig samen met chirurgen en reumatologen in de regio.
 
-## Geen verwijzing nodig
+## Meestal geen verwijzing nodig
 
-U kunt direct bij ons terecht, zonder verwijzing van de huisarts of specialist. Bel ons op 030-7210771 of stuur een WhatsApp, dan plannen we u zo snel mogelijk in.
+U kunt in de meeste gevallen direct bij ons terecht, zonder verwijzing van de huisarts of specialist. Bij bepaalde chronische aandoeningen kan een verwijzing nodig zijn voor vergoeding vanuit de basisverzekering. Bel ons op 030-7210771 of stuur een WhatsApp — we helpen u graag verder.
 
 ## Vergoeding
 

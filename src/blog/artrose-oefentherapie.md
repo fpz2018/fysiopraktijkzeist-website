@@ -84,9 +84,9 @@ Je begint met voorlichting en leefstijladvies. Begrijpen wat artrose is, welke a
 
 In de praktijk blijven de meeste mensen bij die eerste twee stappen. Dat zegt iets: je hebt zelf behoorlijk wat invloed op hoe je artrose zich ontwikkelt.
 
-## Geen verwijzing nodig
+## Meestal geen verwijzing nodig
 
-Nog iets waar veel mensen niet van op de hoogte zijn: je hebt geen verwijzing van de huisarts nodig om naar de fysiotherapeut te gaan. Je kunt rechtstreeks een afspraak maken. Dat scheelt een extra stap en wachttijd.
+Nog iets waar veel mensen niet van op de hoogte zijn: in de meeste gevallen heb je geen verwijzing van de huisarts nodig om naar de fysiotherapeut te gaan. Je kunt rechtstreeks een afspraak maken. Dat scheelt een extra stap en wachttijd. Bij bepaalde chronische aandoeningen kan een verwijzing nodig zijn voor volledige vergoeding vanuit de basisverzekering — bel ons even als je twijfelt.
 
 Bij ons kun je doorgaans binnen drie werkdagen terecht. Bel 030-7210771 of stuur een WhatsApp. [Marc de Jong](/#team) doet onder andere de echografie en begeleidt het oefenprogramma. We kijken dan eerst goed naar wat er aan de hand is voordat we een plan maken.
 

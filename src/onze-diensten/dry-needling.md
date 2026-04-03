@@ -61,11 +61,11 @@ Dat verschilt per klacht. Soms is een of twee keer voldoende, bij chronische kla
 **Kan iedereen dry needling krijgen?**
 Bijna iedereen. We zijn voorzichtig bij mensen die bloedverdunners gebruiken, een naaldfobie hebben, of zwanger zijn. We bespreken dit altijd vooraf.
 
-## Geen verwijzing nodig
+## Meestal geen verwijzing nodig
 
-Je kunt rechtstreeks bij ons terecht. Geen verwijzing van de huisarts nodig. In de meeste gevallen kun je binnen drie werkdagen bij ons terecht.
+Je kunt rechtstreeks bij ons terecht. In de meeste gevallen is geen verwijzing van de huisarts nodig en kun je binnen drie werkdagen bij ons terecht. Bij bepaalde chronische aandoeningen kan een verwijzing nodig zijn voor vergoeding vanuit de basisverzekering.
 
-Bel 030-7210771 of stuur een WhatsApp om een afspraak te maken.
+Bel 030-7210771 of stuur een WhatsApp om een afspraak te maken. Twijfel je? We zoeken het samen met je uit.
 
 ## Vergoeding
 

@@ -61,11 +61,11 @@ Ons fysiotherapie-team bestaat uit ervaren therapeuten die elk hun eigen special
 
 Bij elke nieuwe patiënt nemen we een kort leefstijl-assessment af: [Herstel Start](/onze-diensten/herstel-start). We brengen in kaart hoe u slaapt, drinkt, eet, beweegt en hoeveel stress u ervaart. Die informatie verwerken we in uw behandelplan, zodat we niet alleen de klacht behandelen maar ook de omstandigheden voor herstel verbeteren. Dat maakt een verschil — en het is iets wat vrijwel geen andere praktijk in Zeist doet.
 
-## Geen verwijzing nodig
+## Meestal geen verwijzing nodig
 
 Je kunt rechtstreeks bij ons terecht, zonder verwijzing van de huisarts. Dat bespaart je een extra afspraak en wachttijd. In de meeste gevallen kun je binnen drie werkdagen bij ons terecht.
 
-Bel ons op 030-7210771 of stuur een WhatsApp. We plannen je dan zo snel mogelijk in.
+Let op: bij bepaalde chronische aandoeningen (zoals COPD, reumatoïde artritis of neurologische aandoeningen) is een verwijzing van de huisarts of specialist nodig voor vergoeding vanuit de basisverzekering. Twijfel je? Bel ons op 030-7210771 of stuur een WhatsApp — we zoeken het samen met je uit.
 
 ## Vergoeding
 

@@ -56,8 +56,8 @@ Vervolgbehandelingen duren 25 minuten. De meeste mensen volgen het programma twe
 
 Valpreventie valt onder fysiotherapie en wordt in veel gevallen vergoed vanuit de aanvullende verzekering. Sommige gemeenten bieden daarnaast subsidies voor valpreventie-programma's. Het is de moeite waard om dit na te vragen bij je gemeente of bij ons. Wij helpen je graag uitzoeken wat de mogelijkheden zijn.
 
-## Geen verwijzing nodig
+## Meestal geen verwijzing nodig
 
-Je kunt rechtstreeks bij ons terecht voor valpreventie. Geen verwijzing van de huisarts nodig, al kan je huisarts het wel adviseren. In de meeste gevallen kun je binnen drie werkdagen bij ons terecht.
+Je kunt rechtstreeks bij ons terecht voor valpreventie. In de meeste gevallen is geen verwijzing van de huisarts nodig, al kan je huisarts het wel adviseren. Binnen drie werkdagen kun je bij ons terecht.
 
 Bel 030-7210771 of stuur een WhatsApp. We plannen dan een intake in zodat we kunnen zien waar je staat en wat het beste plan is.

@@ -42,9 +42,9 @@ De behandeling kan bestaan uit:
 
 **[Cristina Sonnevelt](/#team)** is fysiotherapeut en gecertificeerd voetentrainer met meer dan 30 jaar klinische ervaring. Ze is gepassioneerd over alles wat met voeten te maken heeft en behandelt patiënten van jong tot oud.
 
-## Geen verwijzing nodig
+## Meestal geen verwijzing nodig
 
-U kunt direct bij ons terecht, zonder verwijzing van de huisarts. Bel ons op 030-7210771 of stuur een WhatsApp, dan plannen we u zo snel mogelijk in.
+U kunt in de meeste gevallen direct bij ons terecht, zonder verwijzing van de huisarts. Bij bepaalde chronische aandoeningen kan een verwijzing nodig zijn voor vergoeding vanuit de basisverzekering. Bel ons op 030-7210771 of stuur een WhatsApp — we helpen u graag verder.
 
 ## Vergoeding
 
