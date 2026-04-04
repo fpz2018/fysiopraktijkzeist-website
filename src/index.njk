@@ -640,21 +640,60 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     grid.querySelectorAll('.fade-up').forEach((card, i) => { card.style.transitionDelay = `${i * 70}ms`; });
   });
 
-  // Datumkiezer: min = vandaag, alleen ma-do toegestaan
+  // Berekent Pasen voor een gegeven jaar (Gregorian)
+  function getEaster(year) {
+    const a = year % 19, b = Math.floor(year / 100), c = year % 100;
+    const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
+    const g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30;
+    const i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7;
+    const m = Math.floor((a + 11 * h + 22 * l) / 451);
+    const month = Math.floor((h + l - 7 * m + 114) / 31);
+    const day = ((h + l - 7 * m + 114) % 31) + 1;
+    return new Date(year, month - 1, day);
+  }
+
+  // Geeft set van feestdagen (YYYY-MM-DD) voor een jaar
+  function getNLFeestdagen(year) {
+    const add = (d, n) => new Date(d.getTime() + n * 86400000);
+    const fmt = d => d.toISOString().split('T')[0];
+    const pasen = getEaster(year);
+    // Koningsdag: 27 april, maar 26 april als 27 een zondag is
+    const koningsdag = new Date(year, 3, 27).getDay() === 0
+      ? new Date(year, 3, 26) : new Date(year, 3, 27);
+    return new Set([
+      fmt(new Date(year, 0, 1)),    // Nieuwjaarsdag
+      fmt(add(pasen, -2)),           // Goede Vrijdag
+      fmt(pasen),                    // Eerste Paasdag
+      fmt(add(pasen, 1)),            // Tweede Paasdag
+      fmt(koningsdag),               // Koningsdag
+      fmt(new Date(year, 4, 5)),     // Bevrijdingsdag
+      fmt(add(pasen, 39)),           // Hemelvaartsdag
+      fmt(add(pasen, 49)),           // Eerste Pinksterdag
+      fmt(add(pasen, 50)),           // Tweede Pinksterdag
+      fmt(new Date(year, 11, 25)),   // Eerste Kerstdag
+      fmt(new Date(year, 11, 26)),   // Tweede Kerstdag
+    ]);
+  }
+
+  // Datumkiezer: min = vandaag, alleen ma-do en geen feestdagen
   const datumInput = document.getElementById('callbackDatum');
   if (datumInput) {
     const today = new Date();
     datumInput.min = today.toISOString().split('T')[0];
     datumInput.addEventListener('change', function() {
-      const day = new Date(this.value + 'T12:00:00').getDay(); // 0=zo,1=ma,...,4=do,5=vr,6=za
+      const val = this.value;
+      const date = new Date(val + 'T12:00:00');
+      const day = date.getDay(); // 0=zo … 6=za
+      const feestdagen = getNLFeestdagen(date.getFullYear());
       const err = document.getElementById('callbackDateError');
       if (day === 0 || day >= 5) {
-        this.classList.add('invalid');
-        err.style.display = 'block';
-        this.value = '';
+        err.textContent = 'Kies een maandag t/m donderdag';
+        err.style.display = 'block'; this.classList.add('invalid'); this.value = '';
+      } else if (feestdagen.has(val)) {
+        err.textContent = 'De praktijk is gesloten op feestdagen';
+        err.style.display = 'block'; this.classList.add('invalid'); this.value = '';
       } else {
-        this.classList.remove('invalid');
-        err.style.display = 'none';
+        err.style.display = 'none'; this.classList.remove('invalid');
       }
     });
   }
