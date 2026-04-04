@@ -654,8 +654,8 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
 
   // Geeft set van feestdagen (YYYY-MM-DD) voor een jaar
   function getNLFeestdagen(year) {
-    const add = (d, n) => new Date(d.getTime() + n * 86400000);
-    const fmt = d => d.toISOString().split('T')[0];
+    const add = (d, n) => { const r = new Date(d); r.setDate(r.getDate() + n); return r; };
+    const fmt = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     const pasen = getEaster(year);
     // Koningsdag: 27 april, maar 26 april als 27 een zondag is
     const koningsdag = new Date(year, 3, 27).getDay() === 0
