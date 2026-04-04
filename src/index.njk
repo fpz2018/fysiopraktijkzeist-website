@@ -151,7 +151,6 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     .afspraak-list li { display: flex; align-items: center; gap: 10px; font-size: .9rem; color: var(--dark); }
     .afspraak-list li::before { content: '✓'; color: #4ADE80; background: var(--dark); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; flex-shrink: 0; }
     .verne-widget { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden; }
-    .verne-widget iframe { width: 100%; min-height: 600px; border: none; display: block; }
     .callback-section { background: var(--teal-pale); border: 1px solid rgba(27,94,107,.12); border-radius: var(--radius); padding: 32px; margin-top: 32px; }
     .callback-section h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
     .callback-section p { font-size: .875rem; color: var(--gray); margin-bottom: 20px; }
@@ -396,8 +395,8 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
           <div class="callback-success" id="callbackSuccess">✅ Bedankt! Wij bellen u zo spoedig mogelijk terug.</div>
         </div>
       </div>
-      <div class="verne-widget fade-up">
-        <iframe src="https://app.verne.health/embed-appointment-maker/d564a6dd-78f4-464f-ac77-f6f3b967daa3" width="100%" height="650" frameborder="0" allow="payment" title="Online afspraak maken"></iframe>
+      <div class="verne-widget fade-up" style="display:flex;align-items:center;justify-content:center;min-height:200px;">
+        <a href="https://fysiopraktijkzeist.uwpraktijkonline.nl/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.1rem;padding:18px 36px;">📅 Online afspraak maken</a>
       </div>
     </div>
   </div>
