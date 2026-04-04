@@ -1,0 +1,389 @@
+---
+title: Tarieven 2026 | Fysiopraktijk Zeist
+description: Actuele tarieven van Fysiopraktijk Zeist voor 2026. Fysiotherapie, FysioFitness en overige diensten. Veelal vergoed door uw zorgverzekeraar.
+---
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:#1B5E6B; --teal-light:#2A7F91; --teal-pale:#EBF5F7;
+      --orange:#D96B2F; --cream:#F8F5EF;
+      --dark:#1A2332; --gray:#5A6778; --gray-light:#E8E4DE;
+      --radius:12px; --shadow:0 4px 24px rgba(27,94,107,.10);
+      --font-serif:'Fraunces',Georgia,serif; --font-sans:'Inter',system-ui,sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--cream); color: var(--dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 50px; font-family: var(--font-sans); font-size: .95rem; font-weight: 600; cursor: pointer; border: 2px solid transparent; transition: all .2s ease; white-space: nowrap; text-decoration: none; }
+    .btn-primary { background: var(--orange); color: #fff; border-color: var(--orange); }
+    .btn-primary:hover { background: #c25a22; transform: translateY(-1px); color: #fff; }
+    .btn-outline { background: transparent; color: var(--teal); border-color: var(--teal); }
+    .btn-outline:hover { background: var(--teal); color: #fff; }
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(248,245,239,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-light); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav__logo { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--teal); line-height: 1.1; }
+    .nav__logo span { display: block; font-size: .68rem; font-weight: 400; color: var(--gray); font-family: var(--font-sans); letter-spacing: .05em; text-transform: uppercase; }
+    .nav__links { display: flex; gap: 4px; list-style: none; }
+    .nav__links a { padding: 8px 14px; border-radius: 8px; font-size: .9rem; font-weight: 500; color: var(--dark); transition: background .15s, color .15s; }
+    .nav__links a:hover { background: var(--teal-pale); color: var(--teal); }
+    .nav__actions { display: flex; align-items: center; gap: 8px; }
+    .nav__hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+    .nav__hamburger span { display: block; width: 22px; height: 2px; background: var(--dark); border-radius: 2px; }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: 68px; background: var(--cream); z-index: 99; padding: 24px; flex-direction: column; gap: 8px; overflow-y: auto; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { padding: 14px 16px; border-radius: var(--radius); font-size: 1rem; font-weight: 500; color: var(--dark); border: 1px solid var(--gray-light); background: #fff; }
+    @media (max-width: 768px) { .nav__links, .nav__actions .btn { display: none; } .nav__hamburger { display: flex; } }
+    /* Hero */
+    .page-hero { background: var(--teal); padding: 56px 0 48px; }
+    .page-hero h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 600px; line-height: 1.7; }
+    .breadcrumb { font-size: .8rem; color: rgba(255,255,255,.55); margin-bottom: 16px; }
+    .breadcrumb a { color: rgba(255,255,255,.55); }
+    .breadcrumb a:hover { color: #fff; }
+    /* Content */
+    .tarieven-content { max-width: 860px; margin: 0 auto; padding: 64px 0 80px; display: flex; flex-direction: column; gap: 40px; }
+    .tarieven-note { background: #fff; border-left: 4px solid var(--orange); border-radius: 0 var(--radius) var(--radius) 0; padding: 18px 24px; font-size: .9rem; color: var(--gray); line-height: 1.7; }
+    .tarieven-note strong { color: var(--dark); }
+    .tarieven-block h2 { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--teal); margin-bottom: 4px; }
+    .tarieven-block .block-sub { font-size: .85rem; color: var(--gray); margin-bottom: 16px; }
+    .tarieven-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .tarieven-table thead tr { background: var(--teal); color: #fff; }
+    .tarieven-table thead th { padding: 12px 18px; text-align: left; font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+    .tarieven-table thead th:last-child { text-align: right; }
+    .tarieven-table tbody tr { border-bottom: 1px solid var(--gray-light); transition: background .15s; }
+    .tarieven-table tbody tr:last-child { border-bottom: none; }
+    .tarieven-table tbody tr:hover { background: var(--teal-pale); }
+    .tarieven-table tbody tr.row-warning { background: #FFF8F5; }
+    .tarieven-table tbody tr.row-warning:hover { background: #FFEFE8; }
+    .tarieven-table td { padding: 13px 18px; font-size: .9rem; color: var(--dark); }
+    .tarieven-table td:last-child { text-align: right; font-weight: 600; color: var(--teal); white-space: nowrap; }
+    .tarieven-table td.code { color: var(--gray); font-size: .8rem; }
+    .tarieven-table td.warning-price { color: var(--orange); }
+    /* Footer */
+    .footer { background: var(--dark); color: rgba(255,255,255,.7); padding: 56px 0 32px; }
+    .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer__brand p { font-size: .875rem; line-height: 1.7; margin-top: 16px; max-width: 300px; }
+    .footer__col h4 { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 16px; }
+    .footer__hours { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: .85rem; }
+    .footer__hours li { display: flex; justify-content: space-between; gap: 16px; }
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: .875rem; }
+    .footer__links a { color: rgba(255,255,255,.7); transition: color .15s; }
+    .footer__links a:hover { color: #fff; }
+    .footer__bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .8rem; }
+    .footer__legal { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer__legal a { color: rgba(255,255,255,.35); transition: color .15s; }
+    .footer__legal a:hover { color: rgba(255,255,255,.7); }
+    .fab { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: #fff; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 16px rgba(0,0,0,.2); z-index: 90; transition: transform .2s; text-decoration: none; }
+    .fab:hover { transform: scale(1.08); }
+    @media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr; gap: 32px; } }
+    @media (max-width: 600px) { .tarieven-table td, .tarieven-table th { padding: 11px 12px; } }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">
+      {{ general.name }}
+      <span>Fysiotherapeut zonder verwijzing</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="/#behandelingen">Behandelingen</a></li>
+      <li><a href="/#afspraak">Afspraak maken</a></li>
+      <li><a href="/#team">Team</a></li>
+      <li><a href="/#blog">Blog</a></li>
+      <li><a href="/shop">Shop</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 Afspraak maken</a>
+    </div>
+    <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#behandelingen" onclick="closeMobileMenu()">Behandelingen</a>
+  <a href="/#afspraak" onclick="closeMobileMenu()">Afspraak maken</a>
+  <a href="/#team" onclick="closeMobileMenu()">Team</a>
+  <a href="/#blog" onclick="closeMobileMenu()">Blog</a>
+  <a href="/shop" onclick="closeMobileMenu()">Shop</a>
+  <a href="/#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="margin-top:8px">💬 WhatsApp afspraak</a>
+  <a href="tel:{{ general.phone }}" class="btn btn-outline" style="margin-top:4px">📞 {{ general.phone }}</a>
+</div>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> › Tarieven 2026</p>
+    <h1>Tarieven 2026</h1>
+    <p>Onderstaande tarieven gelden voor patiënten zonder aanvullende verzekering of zonder contract tussen uw verzekeraar en onze praktijk.</p>
+  </div>
+</section>
+
+<!-- Content -->
+<main>
+  <div class="container">
+    <div class="tarieven-content">
+
+      <div class="tarieven-note">
+        <strong>Verzekerd?</strong> De meeste behandelingen worden (deels) vergoed vanuit uw aanvullende zorgverzekering. Twijfelt u? Neem contact op via <a href="tel:{{ general.phone }}" style="color:var(--teal)">{{ general.phone }}</a> — wij helpen u graag.
+      </div>
+
+      <!-- Fysiotherapie -->
+      <div class="tarieven-block">
+        <h2>Fysiotherapie</h2>
+        <p class="block-sub">Tarieven per behandeling, onderzoek of groepssessie</p>
+        <table class="tarieven-table">
+          <thead>
+            <tr>
+              <th>Omschrijving</th>
+              <th>Code</th>
+              <th>Tarief</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zitting fysiotherapie</td>
+              <td class="code">1000</td>
+              <td>€ 49,95</td>
+            </tr>
+            <tr>
+              <td>Zitting fysiotherapie — Cristina Sonnevelt</td>
+              <td class="code">1000C</td>
+              <td>€ 91,35</td>
+            </tr>
+            <tr>
+              <td>Zitting fysiotherapie aan huis</td>
+              <td class="code">1001</td>
+              <td>€ 72,60</td>
+            </tr>
+            <tr>
+              <td>Eenmalig fysiotherapeutisch onderzoek</td>
+              <td class="code">1400</td>
+              <td>€ 81,90</td>
+            </tr>
+            <tr>
+              <td>Eenmalig fysiotherapeutisch onderzoek aan huis</td>
+              <td class="code">1401</td>
+              <td>€ 94,00</td>
+            </tr>
+            <tr>
+              <td>Intake na screening / verwijzing</td>
+              <td class="code">1864/1870</td>
+              <td>€ 72,60</td>
+            </tr>
+            <tr>
+              <td>Intake na verwijzing aan huis</td>
+              <td class="code">1871</td>
+              <td>€ 94,00</td>
+            </tr>
+            <tr>
+              <td>Extra lange zitting</td>
+              <td class="code">1700</td>
+              <td>€ 72,60</td>
+            </tr>
+            <tr>
+              <td>Extra lange zitting aan huis</td>
+              <td class="code">1701</td>
+              <td>€ 94,90</td>
+            </tr>
+            <tr>
+              <td>Groepszitting — 2 personen</td>
+              <td class="code">1316</td>
+              <td>€ 49,95</td>
+            </tr>
+            <tr>
+              <td>Groepszitting — 3 personen</td>
+              <td class="code">1317</td>
+              <td>€ 33,40</td>
+            </tr>
+            <tr>
+              <td>Groepszitting — 4 personen</td>
+              <td class="code">1318</td>
+              <td>€ 25,10</td>
+            </tr>
+            <tr class="row-warning">
+              <td>Niet nagekomen afspraak fysiotherapie (80%)</td>
+              <td class="code">—</td>
+              <td class="warning-price">€ 39,95</td>
+            </tr>
+            <tr class="row-warning">
+              <td>Niet nagekomen afspraak intake en onderzoek (80%)</td>
+              <td class="code">—</td>
+              <td class="warning-price">€ 58,10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FysioFitness -->
+      <div class="tarieven-block">
+        <h2>FysioFitness</h2>
+        <p class="block-sub">Abonnementen onder begeleiding van onze therapeuten — inclusief BTW</p>
+        <table class="tarieven-table">
+          <thead>
+            <tr>
+              <th>Omschrijving</th>
+              <th>Periode</th>
+              <th>Tarief</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FysioFitness 1× per week</td>
+              <td class="code">Per maand</td>
+              <td>€ 54,90</td>
+            </tr>
+            <tr>
+              <td>FysioFitness 2× per week</td>
+              <td class="code">Per maand</td>
+              <td>€ 82,90</td>
+            </tr>
+            <tr>
+              <td>FysioFitness 1× per week</td>
+              <td class="code">Per half jaar</td>
+              <td>€ 299,00</td>
+            </tr>
+            <tr>
+              <td>FysioFitness 2× per week</td>
+              <td class="code">Per half jaar</td>
+              <td>€ 447,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Overig -->
+      <div class="tarieven-block">
+        <h2>Overig</h2>
+        <p class="block-sub">Aanvullende diensten</p>
+        <table class="tarieven-table">
+          <thead>
+            <tr>
+              <th>Omschrijving</th>
+              <th></th>
+              <th>Tarief</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Patiënteninformatie aan schadeverzekeraar / (bedrijfs)arts</td>
+              <td class="code">—</td>
+              <td>€ 108,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Orthomoleculair -->
+      <div class="tarieven-block">
+        <h2>Orthomoleculair</h2>
+        <p class="block-sub">Externe praktijk — tarieven excl. BTW</p>
+        <table class="tarieven-table">
+          <thead>
+            <tr>
+              <th>Omschrijving</th>
+              <th></th>
+              <th>Tarief</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Intakegesprek orthomoleculair</td>
+              <td class="code">—</td>
+              <td>€ 142,00</td>
+            </tr>
+            <tr>
+              <td>Behandeling orthomoleculair</td>
+              <td class="code">—</td>
+              <td>€ 56,00</td>
+            </tr>
+            <tr>
+              <td>Telefonisch consult</td>
+              <td class="code">—</td>
+              <td>€ 32,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="nav__logo">{{ general.name }}<span>Fysiotherapeut zonder verwijzing</span></div>
+        <p>Wij behandelen de oorzaak van uw klacht — met persoonlijke aandacht en bewezen methoden. Al meer dan 35 jaar de fysiotherapiepraktijk van Zeist en omstreken.</p>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 WhatsApp</a>
+          <a href="tel:{{ general.phone }}" style="padding:10px 18px;font-size:.85rem;display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2);border-radius:50px">📞 {{ general.phone }}</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Openingstijden</h4>
+        <ul class="footer__hours">
+          <li><span>Maandag</span><span>{{ hours.monday }}</span></li>
+          <li><span>Dinsdag</span><span>{{ hours.tuesday }}</span></li>
+          <li><span>Woensdag</span><span>{{ hours.wednesday }}</span></li>
+          <li><span>Donderdag</span><span>{{ hours.thursday }}</span></li>
+          <li><span>Vrijdag</span><span>{{ hours.friday }}</span></li>
+          <li><span>Zat &amp; Zon</span><span>Gesloten</span></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul class="footer__links">
+          <li>{{ general.address }}</li>
+          <li style="margin-top:10px"><a href="tel:{{ general.phone }}">📞 {{ general.phone }}</a></li>
+          <li><a href="https://wa.me/{{ general.whatsapp }}">💬 WhatsApp</a></li>
+          <li><a href="mailto:{{ general.email }}">✉ {{ general.email }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 {{ general.name }} — BIG-geregistreerd · {{ general.review_score }}/10 op ZorgkaartNederland</span>
+      <div class="footer__legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
+        <a href="/tarieven" style="color:rgba(255,255,255,.7)">Tarieven 2026</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/{{ general.whatsapp }}?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken" aria-label="WhatsApp">💬</a>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) { window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; }); }
+    });
+  }
+</script>
+</body>
+</html>
