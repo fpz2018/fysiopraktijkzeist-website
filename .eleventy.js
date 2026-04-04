@@ -1,4 +1,9 @@
+const markdownIt = require("markdown-it");
+const md = markdownIt({ html: true, linkify: true });
+
 module.exports = function(eleventyConfig) {
+  // Markdown filter voor gebruik in templates
+  eleventyConfig.addFilter("markdownify", (content) => md.render(content || ""));
   // Limit filter voor Nunjucks
   eleventyConfig.addFilter("limit", function(value, count) {
     if (!Array.isArray(value)) return value;

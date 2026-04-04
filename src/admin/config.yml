@@ -42,6 +42,17 @@ collections:
           - { label: "Hero ondertekst", name: "hero_subtitle", widget: "text" }
           - { label: "Inhoud", name: "body", widget: "markdown" }
 
+      - label: "Veelgestelde vragen"
+        name: "faq"
+        file: "src/_data/faq.json"
+        fields:
+          - label: "Vragen"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Vraag", name: "question", widget: "string" }
+              - { label: "Antwoord", name: "answer", widget: "markdown" }
+
       - label: "Tarieven 2026"
         name: "tarieven"
         file: "src/_data/tarieven.json"
