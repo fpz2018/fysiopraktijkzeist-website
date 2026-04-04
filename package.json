@@ -21,5 +21,8 @@
   "homepage": "https://github.com/fpz2018/fysiopraktijkzeist-website#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.1"
   }
 }
