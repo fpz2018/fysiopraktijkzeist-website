@@ -150,7 +150,15 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     .afspraak-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
     .afspraak-list li { display: flex; align-items: center; gap: 10px; font-size: .9rem; color: var(--dark); }
     .afspraak-list li::before { content: '✓'; color: #4ADE80; background: var(--dark); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; flex-shrink: 0; }
-    .verne-widget { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden; }
+    .afspraak-card { background: linear-gradient(145deg, var(--teal) 0%, #0f3d47 100%); border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 40px 36px; color: #fff; display: flex; flex-direction: column; gap: 28px; }
+    .afspraak-card__title { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
+    .afspraak-card__subtitle { font-size: .95rem; opacity: .85; line-height: 1.6; margin-top: 6px; }
+    .afspraak-steps { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .afspraak-steps li { display: flex; align-items: flex-start; gap: 14px; font-size: .9rem; line-height: 1.5; }
+    .afspraak-steps li .step-num { background: rgba(255,255,255,.18); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .afspraak-card__cta { display: block; text-align: center; background: var(--orange); color: #fff; font-family: var(--font-sans); font-weight: 700; font-size: 1.05rem; padding: 18px 24px; border-radius: 50px; text-decoration: none; transition: background .2s, transform .15s; box-shadow: 0 4px 16px rgba(217,107,47,.35); }
+    .afspraak-card__cta:hover { background: #c25a22; transform: translateY(-2px); }
+    .afspraak-card__note { font-size: .8rem; opacity: .7; text-align: center; }
     .callback-section { background: var(--teal-pale); border: 1px solid rgba(27,94,107,.12); border-radius: var(--radius); padding: 32px; margin-top: 32px; }
     .callback-section h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
     .callback-section p { font-size: .875rem; color: var(--gray); margin-bottom: 20px; }
@@ -395,8 +403,19 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
           <div class="callback-success" id="callbackSuccess">✅ Bedankt! Wij bellen u zo spoedig mogelijk terug.</div>
         </div>
       </div>
-      <div class="verne-widget fade-up" style="display:flex;align-items:center;justify-content:center;min-height:200px;">
-        <a href="https://fysiopraktijkzeist.uwpraktijkonline.nl/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.1rem;padding:18px 36px;">📅 Online afspraak maken</a>
+      <div class="afspraak-card fade-up">
+        <div>
+          <div class="afspraak-card__title">Direct een afspraak inplannen</div>
+          <div class="afspraak-card__subtitle">Snel en eenvoudig via ons online systeem. U krijgt direct een bevestiging.</div>
+        </div>
+        <ol class="afspraak-steps">
+          <li><span class="step-num">1</span><span>Kies uw behandelaar of klacht</span></li>
+          <li><span class="step-num">2</span><span>Selecteer een dag en tijd die u uitkomt</span></li>
+          <li><span class="step-num">3</span><span>Vul uw gegevens in en bevestig</span></li>
+          <li><span class="step-num">4</span><span>Ontvang direct een bevestiging per e-mail</span></li>
+        </ol>
+        <a href="https://fysiopraktijkzeist.uwpraktijkonline.nl/" target="_blank" rel="noopener" class="afspraak-card__cta">📅 Online afspraak maken</a>
+        <p class="afspraak-card__note">Geen verwijzing nodig &nbsp;·&nbsp; Gemiddeld binnen 3 werkdagen terecht</p>
       </div>
     </div>
   </div>
