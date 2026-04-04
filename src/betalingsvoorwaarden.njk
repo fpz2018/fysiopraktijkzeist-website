@@ -1,10 +1,14 @@
+---
+title: Betalingsvoorwaarden | Fysiopraktijk Zeist
+description: De betalingsvoorwaarden van Fysiopraktijk Zeist, inclusief aanvullende voorwaarden voor FysioFitness.
+---
 <!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title }} | {{ general.name }}</title>
-  <meta name="description" content="{{ excerpt }}" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,24 +17,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --teal:#1B5E6B; --teal-light:#2A7F91; --teal-pale:#EBF5F7;
-      --orange:#D96B2F; --orange-light:#F5834A; --cream:#F8F5EF;
+      --orange:#D96B2F; --cream:#F8F5EF;
       --dark:#1A2332; --gray:#5A6778; --gray-light:#E8E4DE;
       --radius:12px; --shadow:0 4px 24px rgba(27,94,107,.10);
-      --shadow-lg:0 12px 48px rgba(27,94,107,.16);
       --font-serif:'Fraunces',Georgia,serif; --font-sans:'Inter',system-ui,sans-serif;
     }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-sans); background: var(--cream); color: var(--dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
     .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 50px; font-family: var(--font-sans); font-size: .95rem; font-weight: 600; cursor: pointer; border: 2px solid transparent; transition: all .2s ease; white-space: nowrap; text-decoration: none; }
     .btn-primary { background: var(--orange); color: #fff; border-color: var(--orange); }
-    .btn-primary:hover { background: var(--orange-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(217,107,47,.35); color: #fff; }
+    .btn-primary:hover { background: #c25a22; transform: translateY(-1px); color: #fff; }
     .btn-outline { background: transparent; color: var(--teal); border-color: var(--teal); }
     .btn-outline:hover { background: var(--teal); color: #fff; }
-    .btn-ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.2); }
-    .btn-ghost:hover { background: rgba(255,255,255,.2); color: #fff; }
     /* Nav */
     .nav { position: sticky; top: 0; z-index: 100; background: rgba(248,245,239,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-light); }
     .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
@@ -46,59 +46,41 @@
     .mobile-menu.open { display: flex; }
     .mobile-menu a { padding: 14px 16px; border-radius: var(--radius); font-size: 1rem; font-weight: 500; color: var(--dark); border: 1px solid var(--gray-light); background: #fff; }
     @media (max-width: 768px) { .nav__links, .nav__actions .btn { display: none; } .nav__hamburger { display: flex; } }
-    /* Artikel layout */
-    .post-hero { background: var(--teal); padding: 56px 0 48px; }
-    .post-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 16px; }
-    .post-breadcrumb a { color: rgba(255,255,255,.6); }
-    .post-breadcrumb a:hover { color: #fff; }
-    .post-category { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #7FD1DE; margin-bottom: 14px; }
-    .post-hero h1 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: #fff; line-height: 1.2; max-width: 680px; margin-bottom: 16px; }
-    .post-meta { font-size: .85rem; color: rgba(255,255,255,.6); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .post-thumbnail { width: 100%; max-height: 420px; object-fit: cover; border-radius: var(--radius); margin: 0 auto 0; display: block; box-shadow: var(--shadow-lg); }
-    .post-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; padding: 56px 0 80px; }
-    .post-body { background: #fff; border-radius: var(--radius); padding: 40px 48px; box-shadow: var(--shadow); }
-    .post-body h2 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--dark); margin: 32px 0 12px; }
-    .post-body h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; color: var(--dark); margin: 24px 0 10px; }
-    .post-body p { font-size: 1rem; color: var(--dark); line-height: 1.8; margin-bottom: 18px; }
-    .post-body ul, .post-body ol { padding-left: 24px; margin-bottom: 18px; }
-    .post-body li { font-size: 1rem; line-height: 1.8; color: var(--dark); margin-bottom: 6px; }
-    .post-body img { border-radius: 8px; margin: 24px 0; width: 100%; }
-    .post-body a { color: var(--teal); text-decoration: underline; }
-    .post-body strong { font-weight: 600; }
-    .post-sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 88px; max-height: calc(100vh - 108px); overflow-y: auto; }
-    .sidebar-card { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
-    .sidebar-card h3 { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 12px; }
-    .sidebar-card p { font-size: .875rem; color: var(--gray); line-height: 1.6; margin-bottom: 16px; }
+    /* Hero */
+    .page-hero { background: var(--teal); padding: 56px 0 48px; }
+    .page-hero h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 560px; line-height: 1.7; }
+    .breadcrumb { font-size: .8rem; color: rgba(255,255,255,.55); margin-bottom: 16px; }
+    .breadcrumb a { color: rgba(255,255,255,.55); }
+    .breadcrumb a:hover { color: #fff; }
+    /* Content */
+    .bv-content { max-width: 780px; margin: 0 auto; padding: 64px 0 80px; display: flex; flex-direction: column; gap: 40px; }
+    .bv-block { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .bv-block__header { background: var(--teal); padding: 18px 28px; }
+    .bv-block__header h2 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: #fff; }
+    .bv-block__body { padding: 8px 0; }
+    .bv-row { display: flex; gap: 16px; padding: 16px 28px; border-bottom: 1px solid var(--gray-light); align-items: flex-start; }
+    .bv-row:last-child { border-bottom: none; }
+    .bv-num { flex-shrink: 0; width: 28px; height: 28px; background: var(--teal-pale); color: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; margin-top: 1px; }
+    .bv-row p { font-size: .93rem; color: var(--gray); line-height: 1.75; }
+    .bv-row p strong { color: var(--dark); }
     /* Footer */
     .footer { background: var(--dark); color: rgba(255,255,255,.7); padding: 56px 0 32px; }
-    .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer__brand p { font-size: .875rem; line-height: 1.7; max-width: 280px; margin-top: 14px; }
-    .footer__brand .nav__logo { color: #fff; }
-    .footer__col h4 { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: rgba(255,255,255,.35); margin-bottom: 16px; }
-    .footer__hours { list-style: none; }
-    .footer__hours li { display: flex; justify-content: space-between; font-size: .875rem; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
-    .footer__hours li:last-child { border: none; }
-    .footer__links { list-style: none; }
-    .footer__links li { font-size: .875rem; padding: 5px 0; }
+    .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer__brand p { font-size: .875rem; line-height: 1.7; margin-top: 16px; max-width: 300px; }
+    .footer__col h4 { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 16px; }
+    .footer__hours { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: .85rem; }
+    .footer__hours li { display: flex; justify-content: space-between; gap: 16px; }
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: .875rem; }
     .footer__links a { color: rgba(255,255,255,.7); transition: color .15s; }
     .footer__links a:hover { color: #fff; }
     .footer__bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .8rem; }
     .footer__legal { display: flex; gap: 20px; flex-wrap: wrap; }
     .footer__legal a { color: rgba(255,255,255,.35); transition: color .15s; }
     .footer__legal a:hover { color: rgba(255,255,255,.7); }
-    .fab { position: fixed; bottom: 24px; right: 24px; z-index: 999; background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 4px 20px rgba(37,211,102,.4); transition: transform .2s, box-shadow .2s; cursor: pointer; text-decoration: none; }
-    .fab:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,.5); }
-    .mobile-cta-bar { display: none; }
-    @media (max-width: 900px) {
-      .post-layout { grid-template-columns: 1fr; }
-      .footer__grid { grid-template-columns: 1fr; gap: 32px; }
-      .post-sidebar { display: none; }
-      .fab { display: none; }
-      .mobile-cta-bar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: #fff; border-top: 1px solid var(--gray-light); padding: 12px 16px; gap: 10px; box-shadow: 0 -4px 20px rgba(0,0,0,.10); }
-      .mobile-cta-bar a { flex: 1; justify-content: center; padding: 13px 10px; font-size: .9rem; }
-      body { padding-bottom: 80px; }
-    }
-    @media (max-width: 600px) { .post-body { padding: 24px 20px; } }
+    .fab { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: #fff; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 16px rgba(0,0,0,.2); z-index: 90; transition: transform .2s; text-decoration: none; }
+    .fab:hover { transform: scale(1.08); }
+    @media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr; gap: 32px; } }
   </style>
 </head>
 <body>
@@ -115,6 +97,7 @@
       <li><a href="/#afspraak">Afspraak maken</a></li>
       <li><a href="/#team">Team</a></li>
       <li><a href="/#blog">Blog</a></li>
+      <li><a href="/shop">Shop</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
     <div class="nav__actions">
@@ -131,57 +114,84 @@
   <a href="/#afspraak" onclick="closeMobileMenu()">Afspraak maken</a>
   <a href="/#team" onclick="closeMobileMenu()">Team</a>
   <a href="/#blog" onclick="closeMobileMenu()">Blog</a>
+  <a href="/shop" onclick="closeMobileMenu()">Shop</a>
   <a href="/#contact" onclick="closeMobileMenu()">Contact</a>
   <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="margin-top:8px">💬 WhatsApp afspraak</a>
   <a href="tel:{{ general.phone }}" class="btn btn-outline" style="margin-top:4px">📞 {{ general.phone }}</a>
 </div>
 
-<!-- Artikel header -->
-<section class="post-hero">
+<!-- Hero -->
+<section class="page-hero">
   <div class="container">
-    <p class="post-breadcrumb"><a href="/">Home</a> › <a href="/#blog">Blog</a> › {{ title }}</p>
-    {% if category %}<span class="post-category">{{ category }}</span>{% endif %}
-    <h1>{{ title }}</h1>
-    <div class="post-meta">
-      <span>📅 {{ page.date | dateformat }}</span>
-      {% if category %}<span>📂 {{ category }}</span>{% endif %}
-    </div>
+    <p class="breadcrumb"><a href="/">Home</a> › Betalingsvoorwaarden</p>
+    <h1>Betalingsvoorwaarden</h1>
+    <p>Deze betalingsvoorwaarden zijn onlosmakelijk verbonden met de behandelovereenkomst tussen u als patiënt/klant en Fysiopraktijk Zeist.</p>
   </div>
 </section>
 
-{% if thumbnail %}
-<div class="container" style="margin-top:-24px; position:relative; z-index:2;">
-  <img src="{{ thumbnail }}" alt="{{ title }}" class="post-thumbnail" />
-</div>
-{% endif %}
+<!-- Content -->
+<main>
+  <div class="container">
+    <div class="bv-content">
 
-<!-- Artikel inhoud -->
-<div class="container">
-  <div class="post-layout">
-    <article class="post-body">
-      {{ content | safe }}
-    </article>
-    <aside class="post-sidebar">
-      <div class="sidebar-card">
-        <h3>📅 Afspraak maken</h3>
-        <p>Herkent u klachten uit dit artikel? Maak direct een afspraak — geen verwijzing nodig.</p>
-        <a href="/#afspraak" class="btn btn-primary" style="width:100%;justify-content:center">Afspraak maken</a>
+      <!-- Algemene betalingsvoorwaarden -->
+      <div class="bv-block">
+        <div class="bv-block__header">
+          <h2>Algemene betalingsvoorwaarden</h2>
+        </div>
+        <div class="bv-block__body">
+          <div class="bv-row">
+            <span class="bv-num">1</span>
+            <p>Deze betalingsvoorwaarden zijn onlosmakelijk verbonden met de behandelovereenkomst tussen u als patiënt/klant en Fysiopraktijk Zeist.</p>
+          </div>
+          <div class="bv-row">
+            <span class="bv-num">2</span>
+            <p>Afspraken dienen <strong>24 uur van tevoren</strong> door u geannuleerd te worden. Afspraken die niet of te laat worden geannuleerd, kunnen bij u in rekening worden gebracht. Zie onze <a href="/tarieven" style="color:var(--teal);text-decoration:underline">tarievenlijst</a> voor het tarief.</p>
+          </div>
+          <div class="bv-row">
+            <span class="bv-num">3</span>
+            <p>Betaling voor fysiotherapeutische diensten en/of producten geschiedt binnen <strong>14 dagen na de factuurdatum</strong>. Na het verstrijken van deze termijn treedt verzuim in en staat het Fysiopraktijk Zeist vrij om zonder nadere ingebrekestelling incassomaatregelen te nemen. Naast de declaratie/factuur zal er dan ook wettelijke rente bij u worden gevorderd.</p>
+          </div>
+          <div class="bv-row">
+            <span class="bv-num">4</span>
+            <p>Alle met de incasso van de gedeclareerde/gefactureerde bedragen gemoeide kosten, waaronder de buitengerechtelijke kosten, komen ten laste van de patiënt/klant.</p>
+          </div>
+          <div class="bv-row">
+            <span class="bv-num">5</span>
+            <p>Indien Fysiopraktijk Zeist zich voor het betaalbaar stellen van de declaraties/facturen heeft verbonden aan een factoringbedrijf, dan zullen de betalingsvoorwaarden van dat factoringbedrijf prevaleren.</p>
+          </div>
+          <div class="bv-row">
+            <span class="bv-num">6</span>
+            <p>Bij een eerste afspraak wordt standaard een <strong>intake én een behandeling</strong> ingepland (duur: 50 minuten). Dit wordt ook vermeld op de tarievenlijst.</p>
+          </div>
+        </div>
       </div>
-      <div class="sidebar-card">
-        <h3>💬 Snel contact</h3>
-        <p>Liever eerst overleggen? App of bel ons direct.</p>
-        <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-outline" style="width:100%;justify-content:center;margin-bottom:10px">WhatsApp</a>
-        <a href="tel:{{ general.phone }}" style="display:block;text-align:center;font-size:.875rem;color:var(--teal)">📞 {{ general.phone }}</a>
+
+      <!-- FysioFitness -->
+      <div class="bv-block">
+        <div class="bv-block__header">
+          <h2>Aanvullende voorwaarden FysioFitness</h2>
+        </div>
+        <div class="bv-block__body">
+          <div class="bv-row">
+            <span class="bv-num" style="background:var(--orange);color:#fff">A</span>
+            <p><strong>Abonnement en betaling</strong><br>Het FysioFitness-abonnement wordt vooraf per maand gefactureerd.</p>
+          </div>
+          <div class="bv-row">
+            <span class="bv-num" style="background:var(--orange);color:#fff">B</span>
+            <p><strong>Opzegging en beëindiging</strong><br>Opzeggen of stopzetten kan op elk moment. Er vindt geen restitutie of verrekening plaats voor de resterende periode van de lopende maand. Opzegging dient te geschieden via e-mail, telefoon of WhatsApp. Meldingen uitsluitend via de behandelend fysiotherapeut worden niet in behandeling genomen.</p>
+          </div>
+          <div class="bv-row">
+            <span class="bv-num" style="background:var(--orange);color:#fff">C</span>
+            <p><strong>Aansprakelijkheid en verantwoordelijkheid</strong><br>Deelname aan FysioFitness geschiedt op eigen risico. De praktijk is niet aansprakelijk voor blessures of schade die tijdens de trainingen ontstaan, tenzij sprake is van grove nalatigheid of opzet. Het is de verantwoordelijkheid van de deelnemer om de fysiotherapeut te informeren over relevante medische aandoeningen of beperkingen.</p>
+          </div>
+        </div>
       </div>
-      <div class="sidebar-card" style="background:var(--teal-pale);border:1px solid rgba(27,94,107,.12)">
-        <h3>⭐ {{ general.review_score }}/10</h3>
-        <p>{{ general.review_count }} patiënten beoordeelden ons op ZorgkaartNederland.</p>
-      </div>
-    </aside>
+
+    </div>
   </div>
-</div>
+</main>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
@@ -219,7 +229,7 @@
       <div class="footer__legal">
         <a href="/privacy">Privacy</a>
         <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
-        <a href="/betalingsvoorwaarden">Betalingsvoorwaarden</a>
+        <a href="/betalingsvoorwaarden" style="color:rgba(255,255,255,.7)">Betalingsvoorwaarden</a>
         <a href="/tarieven">Tarieven 2026</a>
       </div>
     </div>
@@ -227,11 +237,6 @@
 </footer>
 
 <a class="fab" href="https://wa.me/{{ general.whatsapp }}?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken" aria-label="WhatsApp">💬</a>
-
-<div class="mobile-cta-bar">
-  <a href="/#afspraak" class="btn btn-primary">📅 Afspraak maken</a>
-  <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-outline">💬 WhatsApp</a>
-</div>
 
 <script>
   const menuBtn = document.getElementById('menuBtn');
