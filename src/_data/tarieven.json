@@ -1,0 +1,32 @@
+{
+  "fysiotherapie": [
+    { "omschrijving": "Zitting fysiotherapie", "code": "1000", "tarief": "49,95", "warning": false },
+    { "omschrijving": "Zitting fysiotherapie — Cristina Sonnevelt", "code": "1000C", "tarief": "91,35", "warning": false },
+    { "omschrijving": "Zitting fysiotherapie aan huis", "code": "1001", "tarief": "72,60", "warning": false },
+    { "omschrijving": "Eenmalig fysiotherapeutisch onderzoek", "code": "1400", "tarief": "81,90", "warning": false },
+    { "omschrijving": "Eenmalig fysiotherapeutisch onderzoek aan huis", "code": "1401", "tarief": "94,00", "warning": false },
+    { "omschrijving": "Intake na screening / verwijzing", "code": "1864/1870", "tarief": "72,60", "warning": false },
+    { "omschrijving": "Intake na verwijzing aan huis", "code": "1871", "tarief": "94,00", "warning": false },
+    { "omschrijving": "Extra lange zitting", "code": "1700", "tarief": "72,60", "warning": false },
+    { "omschrijving": "Extra lange zitting aan huis", "code": "1701", "tarief": "94,90", "warning": false },
+    { "omschrijving": "Groepszitting — 2 personen", "code": "1316", "tarief": "49,95", "warning": false },
+    { "omschrijving": "Groepszitting — 3 personen", "code": "1317", "tarief": "33,40", "warning": false },
+    { "omschrijving": "Groepszitting — 4 personen", "code": "1318", "tarief": "25,10", "warning": false },
+    { "omschrijving": "Niet nagekomen afspraak fysiotherapie (80%)", "code": "—", "tarief": "39,95", "warning": true },
+    { "omschrijving": "Niet nagekomen afspraak intake en onderzoek (80%)", "code": "—", "tarief": "58,10", "warning": true }
+  ],
+  "fysiofitness": [
+    { "omschrijving": "FysioFitness 1× per week", "periode": "Per maand", "tarief": "54,90" },
+    { "omschrijving": "FysioFitness 2× per week", "periode": "Per maand", "tarief": "82,90" },
+    { "omschrijving": "FysioFitness 1× per week", "periode": "Per half jaar", "tarief": "299,00" },
+    { "omschrijving": "FysioFitness 2× per week", "periode": "Per half jaar", "tarief": "447,00" }
+  ],
+  "overig": [
+    { "omschrijving": "Patiënteninformatie aan schadeverzekeraar / (bedrijfs)arts", "code": "—", "tarief": "108,00" }
+  ],
+  "orthomoleculair": [
+    { "omschrijving": "Intakegesprek orthomoleculair", "code": "—", "tarief": "142,00" },
+    { "omschrijving": "Behandeling orthomoleculair", "code": "—", "tarief": "56,00" },
+    { "omschrijving": "Telefonisch consult", "code": "—", "tarief": "32,00" }
+  ]
+}

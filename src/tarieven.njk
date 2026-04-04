@@ -152,84 +152,15 @@ description: Actuele tarieven van Fysiopraktijk Zeist voor 2026. Fysiotherapie, 
         <h2>Fysiotherapie</h2>
         <p class="block-sub">Tarieven per behandeling, onderzoek of groepssessie</p>
         <table class="tarieven-table">
-          <thead>
-            <tr>
-              <th>Omschrijving</th>
-              <th>Code</th>
-              <th>Tarief</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Omschrijving</th><th>Code</th><th>Tarief</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Zitting fysiotherapie</td>
-              <td class="code">1000</td>
-              <td>€ 49,95</td>
+            {% for item in tarieven.fysiotherapie %}
+            <tr{% if item.warning %} class="row-warning"{% endif %}>
+              <td>{{ item.omschrijving }}</td>
+              <td class="code">{{ item.code }}</td>
+              <td{% if item.warning %} class="warning-price"{% endif %}>€ {{ item.tarief }}</td>
             </tr>
-            <tr>
-              <td>Zitting fysiotherapie — Cristina Sonnevelt</td>
-              <td class="code">1000C</td>
-              <td>€ 91,35</td>
-            </tr>
-            <tr>
-              <td>Zitting fysiotherapie aan huis</td>
-              <td class="code">1001</td>
-              <td>€ 72,60</td>
-            </tr>
-            <tr>
-              <td>Eenmalig fysiotherapeutisch onderzoek</td>
-              <td class="code">1400</td>
-              <td>€ 81,90</td>
-            </tr>
-            <tr>
-              <td>Eenmalig fysiotherapeutisch onderzoek aan huis</td>
-              <td class="code">1401</td>
-              <td>€ 94,00</td>
-            </tr>
-            <tr>
-              <td>Intake na screening / verwijzing</td>
-              <td class="code">1864/1870</td>
-              <td>€ 72,60</td>
-            </tr>
-            <tr>
-              <td>Intake na verwijzing aan huis</td>
-              <td class="code">1871</td>
-              <td>€ 94,00</td>
-            </tr>
-            <tr>
-              <td>Extra lange zitting</td>
-              <td class="code">1700</td>
-              <td>€ 72,60</td>
-            </tr>
-            <tr>
-              <td>Extra lange zitting aan huis</td>
-              <td class="code">1701</td>
-              <td>€ 94,90</td>
-            </tr>
-            <tr>
-              <td>Groepszitting — 2 personen</td>
-              <td class="code">1316</td>
-              <td>€ 49,95</td>
-            </tr>
-            <tr>
-              <td>Groepszitting — 3 personen</td>
-              <td class="code">1317</td>
-              <td>€ 33,40</td>
-            </tr>
-            <tr>
-              <td>Groepszitting — 4 personen</td>
-              <td class="code">1318</td>
-              <td>€ 25,10</td>
-            </tr>
-            <tr class="row-warning">
-              <td>Niet nagekomen afspraak fysiotherapie (80%)</td>
-              <td class="code">—</td>
-              <td class="warning-price">€ 39,95</td>
-            </tr>
-            <tr class="row-warning">
-              <td>Niet nagekomen afspraak intake en onderzoek (80%)</td>
-              <td class="code">—</td>
-              <td class="warning-price">€ 58,10</td>
-            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
@@ -239,34 +170,15 @@ description: Actuele tarieven van Fysiopraktijk Zeist voor 2026. Fysiotherapie, 
         <h2>FysioFitness</h2>
         <p class="block-sub">Abonnementen onder begeleiding van onze therapeuten — inclusief BTW</p>
         <table class="tarieven-table">
-          <thead>
-            <tr>
-              <th>Omschrijving</th>
-              <th>Periode</th>
-              <th>Tarief</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Omschrijving</th><th>Periode</th><th>Tarief</th></tr></thead>
           <tbody>
+            {% for item in tarieven.fysiofitness %}
             <tr>
-              <td>FysioFitness 1× per week</td>
-              <td class="code">Per maand</td>
-              <td>€ 54,90</td>
+              <td>{{ item.omschrijving }}</td>
+              <td class="code">{{ item.periode }}</td>
+              <td>€ {{ item.tarief }}</td>
             </tr>
-            <tr>
-              <td>FysioFitness 2× per week</td>
-              <td class="code">Per maand</td>
-              <td>€ 82,90</td>
-            </tr>
-            <tr>
-              <td>FysioFitness 1× per week</td>
-              <td class="code">Per half jaar</td>
-              <td>€ 299,00</td>
-            </tr>
-            <tr>
-              <td>FysioFitness 2× per week</td>
-              <td class="code">Per half jaar</td>
-              <td>€ 447,00</td>
-            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
@@ -276,19 +188,15 @@ description: Actuele tarieven van Fysiopraktijk Zeist voor 2026. Fysiotherapie, 
         <h2>Overig</h2>
         <p class="block-sub">Aanvullende diensten</p>
         <table class="tarieven-table">
-          <thead>
-            <tr>
-              <th>Omschrijving</th>
-              <th></th>
-              <th>Tarief</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Omschrijving</th><th></th><th>Tarief</th></tr></thead>
           <tbody>
+            {% for item in tarieven.overig %}
             <tr>
-              <td>Patiënteninformatie aan schadeverzekeraar / (bedrijfs)arts</td>
-              <td class="code">—</td>
-              <td>€ 108,00</td>
+              <td>{{ item.omschrijving }}</td>
+              <td class="code">{{ item.code }}</td>
+              <td>€ {{ item.tarief }}</td>
             </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
@@ -298,29 +206,15 @@ description: Actuele tarieven van Fysiopraktijk Zeist voor 2026. Fysiotherapie, 
         <h2>Orthomoleculair</h2>
         <p class="block-sub">Externe praktijk — tarieven excl. BTW</p>
         <table class="tarieven-table">
-          <thead>
-            <tr>
-              <th>Omschrijving</th>
-              <th></th>
-              <th>Tarief</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Omschrijving</th><th></th><th>Tarief</th></tr></thead>
           <tbody>
+            {% for item in tarieven.orthomoleculair %}
             <tr>
-              <td>Intakegesprek orthomoleculair</td>
-              <td class="code">—</td>
-              <td>€ 142,00</td>
+              <td>{{ item.omschrijving }}</td>
+              <td class="code">{{ item.code }}</td>
+              <td>€ {{ item.tarief }}</td>
             </tr>
-            <tr>
-              <td>Behandeling orthomoleculair</td>
-              <td class="code">—</td>
-              <td>€ 56,00</td>
-            </tr>
-            <tr>
-              <td>Telefonisch consult</td>
-              <td class="code">—</td>
-              <td>€ 32,00</td>
-            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>

@@ -7,6 +7,75 @@ public_folder: "/images/uploads"
 
 collections:
 
+  # ── Juridische pagina's ───────────────────────────────────
+  - name: "paginas"
+    label: "Pagina's"
+    files:
+
+      - label: "Privacybeleid"
+        name: "privacy"
+        file: "src/privacy.md"
+        fields:
+          - { label: "Paginatitel (SEO)", name: "title", widget: "string" }
+          - { label: "Omschrijving (SEO)", name: "description", widget: "text" }
+          - { label: "Hero titel", name: "hero_title", widget: "string" }
+          - { label: "Hero ondertekst", name: "hero_subtitle", widget: "text" }
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+
+      - label: "Algemene voorwaarden"
+        name: "algemene-voorwaarden"
+        file: "src/algemene-voorwaarden.md"
+        fields:
+          - { label: "Paginatitel (SEO)", name: "title", widget: "string" }
+          - { label: "Omschrijving (SEO)", name: "description", widget: "text" }
+          - { label: "Hero titel", name: "hero_title", widget: "string" }
+          - { label: "Hero ondertekst", name: "hero_subtitle", widget: "text" }
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+
+      - label: "Betalingsvoorwaarden"
+        name: "betalingsvoorwaarden"
+        file: "src/betalingsvoorwaarden.md"
+        fields:
+          - { label: "Paginatitel (SEO)", name: "title", widget: "string" }
+          - { label: "Omschrijving (SEO)", name: "description", widget: "text" }
+          - { label: "Hero titel", name: "hero_title", widget: "string" }
+          - { label: "Hero ondertekst", name: "hero_subtitle", widget: "text" }
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+
+      - label: "Tarieven 2026"
+        name: "tarieven"
+        file: "src/_data/tarieven.json"
+        fields:
+          - label: "Fysiotherapie"
+            name: "fysiotherapie"
+            widget: "list"
+            fields:
+              - { label: "Omschrijving", name: "omschrijving", widget: "string" }
+              - { label: "Code", name: "code", widget: "string" }
+              - { label: "Tarief (bijv. 49,95)", name: "tarief", widget: "string" }
+              - { label: "Waarschuwingsrij (niet nagekomen afspraak)", name: "warning", widget: "boolean", default: false }
+          - label: "FysioFitness"
+            name: "fysiofitness"
+            widget: "list"
+            fields:
+              - { label: "Omschrijving", name: "omschrijving", widget: "string" }
+              - { label: "Periode (bijv. Per maand)", name: "periode", widget: "string" }
+              - { label: "Tarief (bijv. 54,90)", name: "tarief", widget: "string" }
+          - label: "Overig"
+            name: "overig"
+            widget: "list"
+            fields:
+              - { label: "Omschrijving", name: "omschrijving", widget: "string" }
+              - { label: "Code", name: "code", widget: "string" }
+              - { label: "Tarief (bijv. 108,00)", name: "tarief", widget: "string" }
+          - label: "Orthomoleculair"
+            name: "orthomoleculair"
+            widget: "list"
+            fields:
+              - { label: "Omschrijving", name: "omschrijving", widget: "string" }
+              - { label: "Code", name: "code", widget: "string" }
+              - { label: "Tarief (bijv. 56,00)", name: "tarief", widget: "string" }
+
   # ── Blog ──────────────────────────────────────────────────
   - name: "blog"
     label: "Blog artikelen"

@@ -1,7 +1,3 @@
----
-title: Betalingsvoorwaarden | Fysiopraktijk Zeist
-description: De betalingsvoorwaarden van Fysiopraktijk Zeist, inclusief aanvullende voorwaarden voor FysioFitness.
----
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -49,43 +45,50 @@ description: De betalingsvoorwaarden van Fysiopraktijk Zeist, inclusief aanvulle
     /* Hero */
     .page-hero { background: var(--teal); padding: 56px 0 48px; }
     .page-hero h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #fff; margin-bottom: 12px; }
-    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 560px; line-height: 1.7; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 600px; line-height: 1.7; }
     .breadcrumb { font-size: .8rem; color: rgba(255,255,255,.55); margin-bottom: 16px; }
     .breadcrumb a { color: rgba(255,255,255,.55); }
     .breadcrumb a:hover { color: #fff; }
-    /* Content */
-    .bv-content { max-width: 780px; margin: 0 auto; padding: 64px 0 80px; display: flex; flex-direction: column; gap: 40px; }
-    .bv-block { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-    .bv-block__header { background: var(--teal); padding: 18px 28px; }
-    .bv-block__header h2 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: #fff; }
-    .bv-block__body { padding: 8px 0; }
-    .bv-row { display: flex; gap: 16px; padding: 16px 28px; border-bottom: 1px solid var(--gray-light); align-items: flex-start; }
-    .bv-row:last-child { border-bottom: none; }
-    .bv-num { flex-shrink: 0; width: 28px; height: 28px; background: var(--teal-pale); color: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; margin-top: 1px; }
-    .bv-row p { font-size: .93rem; color: var(--gray); line-height: 1.75; }
-    .bv-row p strong { color: var(--dark); }
+    /* Legal content */
+    .legal-body { max-width: 780px; margin: 0 auto; padding: 64px 0 80px; }
+    .legal-body h2 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--teal); margin: 40px 0 12px; padding-top: 40px; border-top: 1px solid var(--gray-light); }
+    .legal-body h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .legal-body h3 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--dark); margin: 24px 0 8px; }
+    .legal-body p { font-size: .97rem; color: var(--gray); line-height: 1.8; margin-bottom: 14px; }
+    .legal-body ul, .legal-body ol { margin: 10px 0 18px 0; display: flex; flex-direction: column; gap: 8px; padding-left: 0; list-style: none; }
+    .legal-body ul li, .legal-body ol li { display: flex; align-items: flex-start; gap: 10px; font-size: .93rem; color: var(--dark); line-height: 1.65; }
+    .legal-body ul li::before { content: '–'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .legal-body ol { counter-reset: legal-counter; }
+    .legal-body ol li { counter-increment: legal-counter; }
+    .legal-body ol li::before { content: counter(legal-counter); background: var(--teal-pale); color: var(--teal); font-size: .78rem; font-weight: 700; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .legal-body strong { color: var(--dark); font-weight: 600; }
+    .legal-body a { color: var(--teal); text-decoration: underline; }
+    .legal-body a:hover { color: var(--teal-light); }
+    .legal-body hr { border: none; border-top: 1px solid var(--gray-light); margin: 32px 0; }
+    .legal-body blockquote { background: var(--teal-pale); border-left: 4px solid var(--teal); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; margin: 20px 0; font-size: .93rem; color: var(--gray); }
     /* Footer */
     .footer { background: var(--dark); color: rgba(255,255,255,.7); padding: 56px 0 32px; }
     .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
     .footer__brand p { font-size: .875rem; line-height: 1.7; margin-top: 16px; max-width: 300px; }
     .footer__col h4 { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 16px; }
-    .footer__hours { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: .85rem; }
-    .footer__hours li { display: flex; justify-content: space-between; gap: 16px; }
-    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: .875rem; }
-    .footer__links a { color: rgba(255,255,255,.7); transition: color .15s; }
+    .footer__hours { list-style: none !important; display: flex; flex-direction: column; gap: 8px; font-size: .85rem; padding-left: 0 !important; }
+    .footer__hours li { display: flex !important; justify-content: space-between; gap: 16px; }
+    .footer__hours li::before { display: none !important; }
+    .footer__links { list-style: none !important; display: flex; flex-direction: column; gap: 10px; font-size: .875rem; padding-left: 0 !important; }
+    .footer__links li::before { display: none !important; }
+    .footer__links a { color: rgba(255,255,255,.7); text-decoration: none; transition: color .15s; }
     .footer__links a:hover { color: #fff; }
     .footer__bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .8rem; }
     .footer__legal { display: flex; gap: 20px; flex-wrap: wrap; }
-    .footer__legal a { color: rgba(255,255,255,.35); transition: color .15s; }
+    .footer__legal a { color: rgba(255,255,255,.35); text-decoration: none; transition: color .15s; }
     .footer__legal a:hover { color: rgba(255,255,255,.7); }
-    .fab { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: #fff; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 16px rgba(0,0,0,.2); z-index: 90; transition: transform .2s; text-decoration: none; }
+    .fab { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: #fff; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 16px rgba(0,0,0,.2); z-index: 90; transition: transform .2s; text-decoration: none !important; }
     .fab:hover { transform: scale(1.08); }
     @media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr; gap: 32px; } }
   </style>
 </head>
 <body>
 
-<!-- Nav -->
 <nav class="nav">
   <div class="container nav__inner">
     <a href="/" class="nav__logo">
@@ -120,74 +123,18 @@ description: De betalingsvoorwaarden van Fysiopraktijk Zeist, inclusief aanvulle
   <a href="tel:{{ general.phone }}" class="btn btn-outline" style="margin-top:4px">📞 {{ general.phone }}</a>
 </div>
 
-<!-- Hero -->
 <section class="page-hero">
   <div class="container">
-    <p class="breadcrumb"><a href="/">Home</a> › Betalingsvoorwaarden</p>
-    <h1>Betalingsvoorwaarden</h1>
-    <p>Deze betalingsvoorwaarden zijn onlosmakelijk verbonden met de behandelovereenkomst tussen u als patiënt/klant en Fysiopraktijk Zeist.</p>
+    <p class="breadcrumb"><a href="/">Home</a> › {{ breadcrumb_label }}</p>
+    <h1>{{ hero_title }}</h1>
+    <p>{{ hero_subtitle }}</p>
   </div>
 </section>
 
-<!-- Content -->
 <main>
   <div class="container">
-    <div class="bv-content">
-
-      <!-- Algemene betalingsvoorwaarden -->
-      <div class="bv-block">
-        <div class="bv-block__header">
-          <h2>Algemene betalingsvoorwaarden</h2>
-        </div>
-        <div class="bv-block__body">
-          <div class="bv-row">
-            <span class="bv-num">1</span>
-            <p>Deze betalingsvoorwaarden zijn onlosmakelijk verbonden met de behandelovereenkomst tussen u als patiënt/klant en Fysiopraktijk Zeist.</p>
-          </div>
-          <div class="bv-row">
-            <span class="bv-num">2</span>
-            <p>Afspraken dienen <strong>24 uur van tevoren</strong> door u geannuleerd te worden. Afspraken die niet of te laat worden geannuleerd, kunnen bij u in rekening worden gebracht. Zie onze <a href="/tarieven" style="color:var(--teal);text-decoration:underline">tarievenlijst</a> voor het tarief.</p>
-          </div>
-          <div class="bv-row">
-            <span class="bv-num">3</span>
-            <p>Betaling voor fysiotherapeutische diensten en/of producten geschiedt binnen <strong>14 dagen na de factuurdatum</strong>. Na het verstrijken van deze termijn treedt verzuim in en staat het Fysiopraktijk Zeist vrij om zonder nadere ingebrekestelling incassomaatregelen te nemen. Naast de declaratie/factuur zal er dan ook wettelijke rente bij u worden gevorderd.</p>
-          </div>
-          <div class="bv-row">
-            <span class="bv-num">4</span>
-            <p>Alle met de incasso van de gedeclareerde/gefactureerde bedragen gemoeide kosten, waaronder de buitengerechtelijke kosten, komen ten laste van de patiënt/klant.</p>
-          </div>
-          <div class="bv-row">
-            <span class="bv-num">5</span>
-            <p>Indien Fysiopraktijk Zeist zich voor het betaalbaar stellen van de declaraties/facturen heeft verbonden aan een factoringbedrijf, dan zullen de betalingsvoorwaarden van dat factoringbedrijf prevaleren.</p>
-          </div>
-          <div class="bv-row">
-            <span class="bv-num">6</span>
-            <p>Bij een eerste afspraak wordt standaard een <strong>intake én een behandeling</strong> ingepland (duur: 50 minuten). Dit wordt ook vermeld op de tarievenlijst.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- FysioFitness -->
-      <div class="bv-block">
-        <div class="bv-block__header">
-          <h2>Aanvullende voorwaarden FysioFitness</h2>
-        </div>
-        <div class="bv-block__body">
-          <div class="bv-row">
-            <span class="bv-num" style="background:var(--orange);color:#fff">A</span>
-            <p><strong>Abonnement en betaling</strong><br>Het FysioFitness-abonnement wordt vooraf per maand gefactureerd.</p>
-          </div>
-          <div class="bv-row">
-            <span class="bv-num" style="background:var(--orange);color:#fff">B</span>
-            <p><strong>Opzegging en beëindiging</strong><br>Opzeggen of stopzetten kan op elk moment. Er vindt geen restitutie of verrekening plaats voor de resterende periode van de lopende maand. Opzegging dient te geschieden via e-mail, telefoon of WhatsApp. Meldingen uitsluitend via de behandelend fysiotherapeut worden niet in behandeling genomen.</p>
-          </div>
-          <div class="bv-row">
-            <span class="bv-num" style="background:var(--orange);color:#fff">C</span>
-            <p><strong>Aansprakelijkheid en verantwoordelijkheid</strong><br>Deelname aan FysioFitness geschiedt op eigen risico. De praktijk is niet aansprakelijk voor blessures of schade die tijdens de trainingen ontstaan, tenzij sprake is van grove nalatigheid of opzet. Het is de verantwoordelijkheid van de deelnemer om de fysiotherapeut te informeren over relevante medische aandoeningen of beperkingen.</p>
-          </div>
-        </div>
-      </div>
-
+    <div class="legal-body">
+      {{ content | safe }}
     </div>
   </div>
 </main>
@@ -200,7 +147,7 @@ description: De betalingsvoorwaarden van Fysiopraktijk Zeist, inclusief aanvulle
         <p>Wij behandelen de oorzaak van uw klacht — met persoonlijke aandacht en bewezen methoden. Al meer dan 35 jaar de fysiotherapiepraktijk van Zeist en omstreken.</p>
         <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
           <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 WhatsApp</a>
-          <a href="tel:{{ general.phone }}" style="padding:10px 18px;font-size:.85rem;display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2);border-radius:50px">📞 {{ general.phone }}</a>
+          <a href="tel:{{ general.phone }}" style="padding:10px 18px;font-size:.85rem;display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2);border-radius:50px;text-decoration:none">📞 {{ general.phone }}</a>
         </div>
       </div>
       <div class="footer__col">
@@ -229,7 +176,7 @@ description: De betalingsvoorwaarden van Fysiopraktijk Zeist, inclusief aanvulle
       <div class="footer__legal">
         <a href="/privacy">Privacy</a>
         <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
-        <a href="/betalingsvoorwaarden" style="color:rgba(255,255,255,.7)">Betalingsvoorwaarden</a>
+        <a href="/betalingsvoorwaarden">Betalingsvoorwaarden</a>
         <a href="/tarieven">Tarieven 2026</a>
       </div>
     </div>
