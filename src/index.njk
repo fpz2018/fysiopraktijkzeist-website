@@ -393,14 +393,29 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
         </div>
         <div class="callback-section fade-up">
           <h3>📞 Bel mij terug</h3>
-          <p>Vul uw telefoonnummer in en wij bellen u zo snel mogelijk terug.</p>
+          <p>Vul uw gegevens in en geef aan in welk tijdvak u teruggebeld wilt worden. We bellen terug op <strong>maandag t/m donderdag tussen 9:00 en 15:00 uur</strong>.</p>
           <form class="callback-form" name="belmetrug" method="POST" data-netlify="true" onsubmit="handleCallback(event)">
             <input type="hidden" name="form-name" value="belmetrug" />
+            <input class="callback-input" type="text" name="naam" placeholder="Uw naam" required />
             <input class="callback-input" type="tel" name="telefoon" placeholder="Uw telefoonnummer" required />
-            <input class="callback-input" type="text" name="naam" placeholder="Uw naam" required style="max-width:160px" />
-            <button type="submit" class="btn btn-primary" style="padding:12px 22px">Bel mij terug</button>
+            <select class="callback-input" name="tijdvak" required style="cursor:pointer;color:var(--dark)">
+              <option value="" disabled selected>Gewenst tijdvak</option>
+              <option value="ma 9-11">Maandag 9:00–11:00</option>
+              <option value="ma 11-13">Maandag 11:00–13:00</option>
+              <option value="ma 13-15">Maandag 13:00–15:00</option>
+              <option value="di 9-11">Dinsdag 9:00–11:00</option>
+              <option value="di 11-13">Dinsdag 11:00–13:00</option>
+              <option value="di 13-15">Dinsdag 13:00–15:00</option>
+              <option value="wo 9-11">Woensdag 9:00–11:00</option>
+              <option value="wo 11-13">Woensdag 11:00–13:00</option>
+              <option value="wo 13-15">Woensdag 13:00–15:00</option>
+              <option value="do 9-11">Donderdag 9:00–11:00</option>
+              <option value="do 11-13">Donderdag 11:00–13:00</option>
+              <option value="do 13-15">Donderdag 13:00–15:00</option>
+            </select>
+            <button type="submit" class="btn btn-primary" style="padding:12px 22px;width:100%">Bel mij terug</button>
           </form>
-          <div class="callback-success" id="callbackSuccess">✅ Bedankt! Wij bellen u zo spoedig mogelijk terug.</div>
+          <div class="callback-success" id="callbackSuccess">✅ Bedankt! Wij bellen u terug in het gekozen tijdvak.</div>
         </div>
       </div>
       <div class="afspraak-card fade-up">
