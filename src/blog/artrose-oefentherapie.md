@@ -2,7 +2,9 @@
 title: "Artrose en oefentherapie: waarom bewegen helpt (ook als het pijn doet)"
 date: 2026-03-31
 category: Artrose
-excerpt: "Bewegen met artrose voelt tegenstrijdig. Toch laat onderzoek keer op keer zien dat oefentherapie een van de beste behandelingen is. In dit artikel leggen we uit wat er werkt, wat niet, en hoe je ermee begint."
+excerpt: Bewegen met artrose voelt tegenstrijdig. Toch laat onderzoek keer op
+  keer zien dat oefentherapie een van de beste behandelingen is. In dit artikel
+  leggen we uit wat er werkt, wat niet, en hoe je ermee begint.
 published: true
 tags:
   - artrose
@@ -10,6 +12,7 @@ tags:
   - fysiotherapie
   - knieartrose
   - heupartrose
+thumbnail: /images/uploads/knie-oefening.jpg
 ---
 
 ## "Moet ik dan bewegen met artrose?"
