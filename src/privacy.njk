@@ -1,0 +1,317 @@
+---
+title: Privacybeleid | Fysiopraktijk Zeist
+description: Lees hoe Fysiopraktijk Zeist omgaat met uw persoonsgegevens. Wij verwerken uw gegevens zorgvuldig conform de AVG.
+---
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:#1B5E6B; --teal-light:#2A7F91; --teal-pale:#EBF5F7;
+      --orange:#D96B2F; --cream:#F8F5EF;
+      --dark:#1A2332; --gray:#5A6778; --gray-light:#E8E4DE;
+      --radius:12px; --shadow:0 4px 24px rgba(27,94,107,.10);
+      --shadow-lg:0 12px 48px rgba(27,94,107,.16);
+      --font-serif:'Fraunces',Georgia,serif; --font-sans:'Inter',system-ui,sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--cream); color: var(--dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 50px; font-family: var(--font-sans); font-size: .95rem; font-weight: 600; cursor: pointer; border: 2px solid transparent; transition: all .2s ease; white-space: nowrap; text-decoration: none; }
+    .btn-primary { background: var(--orange); color: #fff; border-color: var(--orange); }
+    .btn-primary:hover { background: #c25a22; transform: translateY(-1px); color: #fff; }
+    .btn-outline { background: transparent; color: var(--teal); border-color: var(--teal); }
+    .btn-outline:hover { background: var(--teal); color: #fff; }
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(248,245,239,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-light); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav__logo { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--teal); line-height: 1.1; }
+    .nav__logo span { display: block; font-size: .68rem; font-weight: 400; color: var(--gray); font-family: var(--font-sans); letter-spacing: .05em; text-transform: uppercase; }
+    .nav__links { display: flex; gap: 4px; list-style: none; }
+    .nav__links a { padding: 8px 14px; border-radius: 8px; font-size: .9rem; font-weight: 500; color: var(--dark); transition: background .15s, color .15s; }
+    .nav__links a:hover { background: var(--teal-pale); color: var(--teal); }
+    .nav__actions { display: flex; align-items: center; gap: 8px; }
+    .nav__hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+    .nav__hamburger span { display: block; width: 22px; height: 2px; background: var(--dark); border-radius: 2px; }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: 68px; background: var(--cream); z-index: 99; padding: 24px; flex-direction: column; gap: 8px; overflow-y: auto; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { padding: 14px 16px; border-radius: var(--radius); font-size: 1rem; font-weight: 500; color: var(--dark); border: 1px solid var(--gray-light); background: #fff; }
+    @media (max-width: 768px) { .nav__links, .nav__actions .btn { display: none; } .nav__hamburger { display: flex; } }
+    /* Hero */
+    .page-hero { background: var(--teal); padding: 56px 0 48px; }
+    .page-hero h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.8); max-width: 560px; line-height: 1.7; }
+    .breadcrumb { font-size: .8rem; color: rgba(255,255,255,.55); margin-bottom: 16px; }
+    .breadcrumb a { color: rgba(255,255,255,.55); }
+    .breadcrumb a:hover { color: #fff; }
+    /* Content */
+    .privacy-content { max-width: 780px; margin: 0 auto; padding: 64px 0 80px; }
+    .privacy-content h2 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--teal); margin: 40px 0 12px; padding-top: 8px; border-top: 2px solid var(--teal-pale); }
+    .privacy-content h2:first-child { margin-top: 0; border-top: none; }
+    .privacy-content p { font-size: .97rem; color: var(--gray); line-height: 1.8; margin-bottom: 14px; }
+    .privacy-content ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 12px 0 20px 0; }
+    .privacy-content ul li { display: flex; align-items: flex-start; gap: 10px; font-size: .93rem; color: var(--dark); line-height: 1.6; }
+    .privacy-content ul li::before { content: '–'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .privacy-content strong { color: var(--dark); font-weight: 600; }
+    .privacy-contact { background: var(--teal-pale); border: 1px solid rgba(27,94,107,.15); border-radius: var(--radius); padding: 28px 32px; margin-top: 40px; }
+    .privacy-contact h2 { border-top: none; margin-top: 0; padding-top: 0; }
+    .privacy-contact p { margin-bottom: 6px; }
+    /* Footer */
+    .footer { background: var(--dark); color: rgba(255,255,255,.7); padding: 56px 0 32px; }
+    .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer__brand p { font-size: .875rem; line-height: 1.7; margin-top: 16px; max-width: 300px; }
+    .footer__col h4 { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 16px; }
+    .footer__hours { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: .85rem; }
+    .footer__hours li { display: flex; justify-content: space-between; gap: 16px; }
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: .875rem; }
+    .footer__links a { color: rgba(255,255,255,.7); transition: color .15s; }
+    .footer__links a:hover { color: #fff; }
+    .footer__bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .8rem; }
+    .footer__legal { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer__legal a { color: rgba(255,255,255,.35); transition: color .15s; }
+    .footer__legal a:hover { color: rgba(255,255,255,.7); }
+    .fab { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: #fff; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 16px rgba(0,0,0,.2); z-index: 90; transition: transform .2s; text-decoration: none; }
+    .fab:hover { transform: scale(1.08); }
+    @media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr; gap: 32px; } }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">
+      {{ general.name }}
+      <span>Fysiotherapeut zonder verwijzing</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="/#behandelingen">Behandelingen</a></li>
+      <li><a href="/#afspraak">Afspraak maken</a></li>
+      <li><a href="/#team">Team</a></li>
+      <li><a href="/#blog">Blog</a></li>
+      <li><a href="/shop">Shop</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 Afspraak maken</a>
+    </div>
+    <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#behandelingen" onclick="closeMobileMenu()">Behandelingen</a>
+  <a href="/#afspraak" onclick="closeMobileMenu()">Afspraak maken</a>
+  <a href="/#team" onclick="closeMobileMenu()">Team</a>
+  <a href="/#blog" onclick="closeMobileMenu()">Blog</a>
+  <a href="/shop" onclick="closeMobileMenu()">Shop</a>
+  <a href="/#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="margin-top:8px">💬 WhatsApp afspraak</a>
+  <a href="tel:{{ general.phone }}" class="btn btn-outline" style="margin-top:4px">📞 {{ general.phone }}</a>
+</div>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> › Privacybeleid</p>
+    <h1>Privacybeleid</h1>
+    <p>Fysiopraktijk Zeist gaat zorgvuldig om met uw persoonsgegevens, conform de Algemene Verordening Gegevensbescherming (AVG).</p>
+  </div>
+</section>
+
+<!-- Content -->
+<main>
+  <div class="container">
+    <div class="privacy-content">
+
+      <h2>Privacy Policy</h2>
+      <p>Fysiopraktijk Zeist hecht veel waarde aan de bescherming van uw persoonsgegevens. In deze Privacy policy willen we heldere en transparante informatie geven over hoe wij omgaan met persoonsgegevens.</p>
+      <p>Wij doen er alles aan om uw privacy te waarborgen en gaan daarom zorgvuldig om met persoonsgegevens. Fysiopraktijk Zeist houdt zich in alle gevallen aan de toepasselijke wet- en regelgeving, waaronder de Algemene Verordening Gegevensbescherming. Dit brengt met zich mee dat wij in ieder geval:</p>
+      <ul>
+        <li>Uw persoonsgegevens verwerken in overeenstemming met het doel waarvoor deze zijn verstrekt; deze doelen en type persoonsgegevens zijn beschreven in dit Privacy policy;</li>
+        <li>Verwerking van uw persoonsgegevens beperkt is tot enkel die gegevens welke minimaal nodig zijn voor de doeleinden waarvoor ze worden verwerkt;</li>
+        <li>Vragen om uw uitdrukkelijke toestemming als wij deze nodig hebben voor de verwerking van uw persoonsgegevens;</li>
+        <li>Passende technische en organisatorische maatregelen hebben genomen zodat de beveiliging van uw persoonsgegevens gewaarborgd is;</li>
+        <li>Geen persoonsgegevens doorgeven aan andere partijen, tenzij dit nodig is voor uitvoering van de doeleinden waarvoor ze zijn verstrekt;</li>
+        <li>Op de hoogte zijn van uw rechten omtrent uw persoonsgegevens, u hierop willen wijzen en deze respecteren.</li>
+      </ul>
+      <p>Als Fysiopraktijk Zeist zijn wij verantwoordelijk voor de verwerking van uw persoonsgegevens. Indien u na het doornemen van ons Privacy policy, of in algemenere zin, vragen heeft hierover of contact met ons wenst op te nemen kan dit via de contactgegevens onderaan dit document.</p>
+
+      <h2>Verwerking van persoonsgegevens van patiënten of cliënten</h2>
+      <p>Persoonsgegevens van patiënten of cliënten worden door Fysiopraktijk Zeist verwerkt ten behoeve van de volgende doelstelling(en):</p>
+      <ul>
+        <li>Patiëntgegevens vastleggen t.b.v. het behandelproces;</li>
+        <li>Cliëntgegevens vastleggen t.b.v. (medische) training;</li>
+        <li>Cliëntgegevens vastleggen t.b.v. marketingdoeleinden.</li>
+      </ul>
+      <p><strong>Grondslag:</strong> de behandelovereenkomst, aanmelding als patiënt en/of abonnement.</p>
+      <p>Voor de bovenstaande doelstelling(en) kan Fysiopraktijk Zeist de volgende persoonsgegevens van u vragen:</p>
+      <ul>
+        <li>Voornaam, tussenvoegsel, achternaam;</li>
+        <li>(Zakelijk) telefoonnummer en e-mailadres;</li>
+        <li>Geslacht en geboortedatum;</li>
+        <li>Gezondheidsgegevens en verzekeringsgegevens;</li>
+        <li>BSN en ID- of paspoortnummer.</li>
+      </ul>
+      <p><strong>Bewaartermijn:</strong> gedurende de looptijd van de behandelovereenkomst — 15 jaar conform de Wet op de Geneeskundige Behandelingsovereenkomst (WGBO). Voor abonnementen: gedurende de looptijd van het abonnement.</p>
+
+      <h2>Verwerking van persoonsgegevens van zorgverleners</h2>
+      <p>Persoonsgegevens van zorgverleners worden verwerkt ten behoeve van het uitwisselen van patiëntgegevens t.b.v. de behandeling.</p>
+      <p><strong>Grondslag:</strong> verwijzing.</p>
+      <p>Fysiopraktijk Zeist kan de volgende persoonsgegevens van zorgverleners vragen:</p>
+      <ul>
+        <li>Voornaam, tussenvoegsel, achternaam;</li>
+        <li>Praktijknaam, e-mailadres, telefoonnummer;</li>
+        <li>AGB-code en Zorgmail-adres.</li>
+      </ul>
+      <p><strong>Bewaartermijn:</strong> gedurende de looptijd van de behandelovereenkomst van de patiënt — 15 jaar conform de WGBO.</p>
+
+      <h2>Verwerking van persoonsgegevens van geïnteresseerden</h2>
+      <p>Persoonsgegevens van prospects, stakeholder-/lobby contacten en/of geïnteresseerden worden verwerkt ten behoeve van informatieverstrekking in de vorm van nieuwsbrieven en/of gerichte contacten.</p>
+      <p><strong>Grondslag:</strong> mondelinge toestemming, afgifte visitekaartje en/of via social media; inschrijving als patiënt.</p>
+      <p>Fysiopraktijk Zeist kan de volgende persoonsgegevens vragen:</p>
+      <ul>
+        <li>Voornaam, tussenvoegsel, achternaam;</li>
+        <li>Adres, woonplaats;</li>
+        <li>Telefoonnummer, e-mailadres en geboortedatum.</li>
+      </ul>
+      <p><strong>Bewaartermijn:</strong> gedurende de periode dat men gezien wordt als prospect, stakeholder-/lobbycontact en/of geïnteresseerde.</p>
+
+      <h2>Verwerking van persoonsgegevens van medewerkers</h2>
+      <p>Persoonsgegevens van medewerkers worden verwerkt ten behoeve van de uitvoering van de arbeidsovereenkomst.</p>
+      <p><strong>Grondslag:</strong> de arbeidsovereenkomst.</p>
+      <p>Fysiopraktijk Zeist kan de volgende persoonsgegevens van medewerkers vragen:</p>
+      <ul>
+        <li>Voornaam, tussenvoegsel, achternaam;</li>
+        <li>Adres, woonplaats;</li>
+        <li>AGB-nummer, BIG-nummer;</li>
+        <li>Telefoonnummer, e-mailadres, geboortedatum;</li>
+        <li>Salarisgegevens, kopie ID, BSN-nummer, bankgegevens.</li>
+      </ul>
+      <p><strong>Bewaartermijn:</strong> gedurende de arbeidsovereenkomst; daarna alleen in de financiële administratie voor maximaal 7 jaar.</p>
+
+      <h2>Verstrekking aan derden</h2>
+      <p>De gegevens die u aan ons geeft kunnen wij aan derde partijen verstrekken indien dit noodzakelijk is voor uitvoering van de hierboven beschreven doeleinden. Zo maken wij gebruik van een derde partij voor:</p>
+      <ul>
+        <li>Het verzorgen van de digitale dossiervoering (EPD);</li>
+        <li>Het verzorgen van de (financiële) administratie;</li>
+        <li>Het verzorgen van nieuwsbrieven en uitnodigingen;</li>
+        <li>Het verzorgen van de uitvraag van patiënttevredenheidsonderzoeken;</li>
+        <li>Het verwerken van declaraties of banktransacties;</li>
+        <li>Het verzorgen van een telefoonservice.</li>
+      </ul>
+      <p>Wij geven nooit persoonsgegevens door aan andere partijen waarmee we geen verwerkersovereenkomst hebben afgesloten. Verder zullen wij de door u verstrekte gegevens niet aan andere partijen verstrekken, tenzij dit wettelijk verplicht en toegestaan is.</p>
+
+      <h2>Binnen de EU</h2>
+      <p>Wij verstrekken geen persoonsgegevens aan partijen welke gevestigd zijn buiten de EU.</p>
+
+      <h2>Minderjarigen</h2>
+      <p>Wij verwerken enkel en alleen persoonsgegevens van minderjarigen (personen jonger dan 16 jaar) indien daarvoor schriftelijke toestemming is gegeven door de ouder, verzorger of wettelijke vertegenwoordiger.</p>
+
+      <h2>Bewaartermijn</h2>
+      <p>Fysiopraktijk Zeist bewaart persoonsgegevens niet langer dan noodzakelijk voor het doel waarvoor deze zijn verstrekt dan wel op grond van de wet is vereist.</p>
+
+      <h2>Beveiliging</h2>
+      <p>Wij hebben passende technische en organisatorische maatregelen genomen om persoonsgegevens te beschermen tegen onrechtmatige verwerking, waaronder:</p>
+      <ul>
+        <li>Alle personen die namens Fysiopraktijk Zeist van uw gegevens kennis kunnen nemen zijn gehouden aan geheimhouding;</li>
+        <li>Wij hanteren een gebruikersnaam- en wachtwoordbeleid op al onze systemen;</li>
+        <li>Wij pseudonimiseren en zorgen voor encryptie van persoonsgegevens als daar aanleiding toe is;</li>
+        <li>Wij laten back-ups maken om gegevens te kunnen herstellen bij fysieke of technische incidenten;</li>
+        <li>Wij testen en evalueren regelmatig onze maatregelen;</li>
+        <li>Onze medewerkers zijn geïnformeerd over het belang van de bescherming van persoonsgegevens.</li>
+      </ul>
+
+      <h2>Rechten omtrent uw gegevens</h2>
+      <p>U heeft recht op inzage, rectificatie of verwijdering van de persoonsgegevens welke wij van u ontvangen hebben. Tevens kunt u bezwaar maken tegen de verwerking van uw persoonsgegevens (of een deel hiervan) door ons of door één van onze verwerkers. Ook heeft u het recht om de door u verstrekte gegevens door ons te laten overdragen aan uzelf of direct aan een andere partij.</p>
+      <p>Wij kunnen u vragen om u te legitimeren voordat wij gehoor kunnen geven aan voornoemde verzoeken. Mogen wij uw persoonsgegevens verwerken op basis van een door u gegeven toestemming, dan heeft u altijd het recht deze toestemming in te trekken.</p>
+
+      <h2>Klachten</h2>
+      <p>Mocht u een klacht hebben over de verwerking van uw persoonsgegevens dan vragen wij u hierover direct contact met ons op te nemen. Komen wij er samen niet uit, dan heeft u altijd het recht een klacht in te dienen bij de <strong>Autoriteit Persoonsgegevens</strong>, de toezichthoudende autoriteit op het gebied van privacybescherming.</p>
+
+      <h2>Vragen</h2>
+      <p>Als u naar aanleiding van ons privacybeleid nog vragen of opmerkingen heeft, neem dan gerust contact met ons op.</p>
+
+      <div class="privacy-contact">
+        <h2>Contactgegevens</h2>
+        <p><strong>Fysiopraktijk Zeist</strong></p>
+        <p>{{ general.address }}</p>
+        <p><a href="tel:{{ general.phone }}" style="color:var(--teal)">📞 {{ general.phone }}</a></p>
+        <p><a href="mailto:{{ general.email }}" style="color:var(--teal)">✉ {{ general.email }}</a></p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="nav__logo">{{ general.name }}<span>Fysiotherapeut zonder verwijzing</span></div>
+        <p>Wij behandelen de oorzaak van uw klacht — met persoonlijke aandacht en bewezen methoden. Al meer dan 35 jaar de fysiotherapiepraktijk van Zeist en omstreken.</p>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 WhatsApp</a>
+          <a href="tel:{{ general.phone }}" style="padding:10px 18px;font-size:.85rem;display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2);border-radius:50px">📞 {{ general.phone }}</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Openingstijden</h4>
+        <ul class="footer__hours">
+          <li><span>Maandag</span><span>{{ hours.monday }}</span></li>
+          <li><span>Dinsdag</span><span>{{ hours.tuesday }}</span></li>
+          <li><span>Woensdag</span><span>{{ hours.wednesday }}</span></li>
+          <li><span>Donderdag</span><span>{{ hours.thursday }}</span></li>
+          <li><span>Vrijdag</span><span>{{ hours.friday }}</span></li>
+          <li><span>Zat &amp; Zon</span><span>Gesloten</span></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul class="footer__links">
+          <li>{{ general.address }}</li>
+          <li style="margin-top:10px"><a href="tel:{{ general.phone }}">📞 {{ general.phone }}</a></li>
+          <li><a href="https://wa.me/{{ general.whatsapp }}">💬 WhatsApp</a></li>
+          <li><a href="mailto:{{ general.email }}">✉ {{ general.email }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 {{ general.name }} — BIG-geregistreerd · {{ general.review_score }}/10 op ZorgkaartNederland</span>
+      <div class="footer__legal">
+        <a href="/privacy" style="color:rgba(255,255,255,.7)">Privacy</a>
+        <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
+        <a href="/tarieven">Tarieven 2026</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/{{ general.whatsapp }}?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken" aria-label="WhatsApp">💬</a>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) { window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; }); }
+    });
+  }
+</script>
+</body>
+</html>
