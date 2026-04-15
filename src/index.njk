@@ -170,15 +170,7 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
       .midcta__ctas .btn-lg { justify-content: center; width: 100%; }
       .midcta__reassure { font-size: .8rem; line-height: 1.8; }
     }
-    .hours-strip { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: center; align-items: center; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 24px 32px; margin-top: 40px; }
-    .hours-strip__status { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding-left: 24px; margin-left: 8px; border-left: 1px solid rgba(255,255,255,.15); }
-    .hours-strip__status-line { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 600; white-space: nowrap; }
-    .hours-strip__status-line::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 10px rgba(74,222,128,.6); animation: statusPulse 2s ease-in-out infinite; }
-    .hours-strip__status--closed .hours-strip__status-line::before { background: #F87171; box-shadow: 0 0 10px rgba(248,113,113,.5); }
-    @keyframes statusPulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
-    .hours-strip__call { display: inline-flex; align-items: center; gap: 6px; background: var(--orange); color: #fff; font-weight: 600; font-size: .85rem; padding: 8px 16px; border-radius: 50px; text-decoration: none; white-space: nowrap; font-variant-numeric: tabular-nums; transition: transform .15s, box-shadow .15s; }
-    .hours-strip__call:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(217,107,47,.4); color: #fff; }
-    @media (max-width: 700px) { .hours-strip__status { border-left: none; padding-left: 0; margin-left: 0; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.15); width: 100%; align-items: center; } }
+    .hours-strip { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: center; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 24px 32px; margin-top: 40px; }
     .hours-item { text-align: center; }
     .hours-item strong { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.55); margin-bottom: 4px; }
     .hours-item span { font-size: .88rem; color: #fff; font-weight: 500; font-variant-numeric: tabular-nums; }
@@ -489,10 +481,6 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
       <div class="hours-item"><strong>Donderdag</strong><span>{{ hours.thursday }}</span></div>
       <div class="hours-item"><strong>Vrijdag</strong><span>{{ hours.friday }}</span></div>
       <div class="hours-item"><strong>Telefoon</strong><span>{{ hours.phone_hours }}</span></div>
-      <div class="hours-strip__status" id="hoursStatus" data-mon="{{ hours.monday }}" data-tue="{{ hours.tuesday }}" data-wed="{{ hours.wednesday }}" data-thu="{{ hours.thursday }}" data-fri="{{ hours.friday }}">
-        <span class="hours-strip__status-line" id="hoursStatusLine">Nu open</span>
-        <a href="tel:{{ general.phone }}" class="hours-strip__call">📞 {{ general.phone }}</a>
-      </div>
     </div>
   </div>
 </section>
@@ -558,54 +546,6 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
       entries.forEach(e => { bar.classList.toggle('visible', !e.isIntersecting); });
     }, { threshold: 0, rootMargin: '-80px 0px 0px 0px' });
     io.observe(hero);
-  })();
-
-  // Hours-strip: open/gesloten status op basis van huidige tijd
-  (function() {
-    const wrap = document.getElementById('hoursStatus');
-    if (!wrap) return;
-    const line = document.getElementById('hoursStatusLine');
-    const dayKeys = ['sun','mon','tue','wed','thu','fri','sat'];
-    const dataKeys = ['', 'mon','tue','wed','thu','fri',''];
-    function parseRange(str) {
-      if (!str) return null;
-      const m = str.match(/(\d{1,2})[:.]?(\d{2})?\s*[-–]\s*(\d{1,2})[:.]?(\d{2})?/);
-      if (!m) return null;
-      return { open: parseInt(m[1],10)*60 + parseInt(m[2]||'0',10), close: parseInt(m[3],10)*60 + parseInt(m[4]||'0',10) };
-    }
-    function findNextOpen(day, mins) {
-      for (let offset = 0; offset <= 7; offset++) {
-        const d = (day + offset) % 7;
-        const k = dataKeys[d];
-        const r = k ? parseRange(wrap.dataset[k]) : null;
-        if (!r) continue;
-        if (offset === 0 && mins >= r.open) continue;
-        const hh = Math.floor(r.open/60), mm = String(r.open%60).padStart(2,'0');
-        const labels = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
-        const when = offset === 0 ? 'vandaag' : offset === 1 ? 'morgen' : labels[d];
-        return `opent ${when} om ${hh}:${mm}`;
-      }
-      return '';
-    }
-    function update() {
-      const now = new Date();
-      const day = now.getDay();
-      const mins = now.getHours()*60 + now.getMinutes();
-      const key = dataKeys[day];
-      const range = key ? parseRange(wrap.dataset[key]) : null;
-      const open = range && mins >= range.open && mins < range.close;
-      if (open) {
-        wrap.classList.remove('hours-strip__status--closed');
-        const hh = Math.floor(range.close/60), mm = String(range.close%60).padStart(2,'0');
-        line.textContent = `Nu open · sluit om ${hh}:${mm}`;
-      } else {
-        wrap.classList.add('hours-strip__status--closed');
-        const next = findNextOpen(day, mins);
-        line.textContent = next ? `Nu gesloten · ${next}` : 'Nu gesloten';
-      }
-    }
-    update();
-    setInterval(update, 60000);
   })();
 
   // Berekent Pasen voor een gegeven jaar (Gregorian)
