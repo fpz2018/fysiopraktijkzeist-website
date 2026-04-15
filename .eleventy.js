@@ -13,6 +13,7 @@ module.exports = function(eleventyConfig) {
   // Kopieer statische bestanden
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/admin");
+  eleventyConfig.addPassthroughCopy("src/css");
 
   // Datum filter
   eleventyConfig.addFilter("dateformat", function(date) {
