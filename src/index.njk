@@ -55,7 +55,17 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     }
     .hero h1 { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 20px; max-width: 600px; text-wrap: balance; }
     .hero h1 em { font-style: italic; color: #7FD1DE; }
-    .hero__sub { font-size: 1.05rem; color: rgba(255,255,255,.8); line-height: 1.7; max-width: 500px; margin-bottom: 32px; }
+    .hero__sub { font-size: 1.05rem; color: rgba(255,255,255,.8); line-height: 1.7; max-width: 500px; margin-bottom: 28px; }
+    .hero__ctas { gap: 12px; flex-wrap: wrap; }
+    .hero__ctas .btn-lg { padding: 16px 26px; font-size: 1rem; font-weight: 600; }
+    .hero__ctas .btn-primary.btn-lg { box-shadow: 0 8px 24px rgba(217,107,47,.35); }
+    .hero__ctas .btn-primary.btn-lg:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(217,107,47,.45); }
+    .hero__ctas .btn-white.btn-lg { font-variant-numeric: tabular-nums; }
+    .hero__cta-note { margin-top: 14px; font-size: .85rem; color: rgba(255,255,255,.7); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    @media (max-width: 600px) {
+      .hero__ctas { flex-direction: column; align-items: stretch; }
+      .hero__ctas .btn-lg { justify-content: center; width: 100%; }
+    }
     .hero__card { background: #fff; border-radius: var(--radius); padding: 28px 24px; width: 240px; flex-shrink: 0; box-shadow: var(--shadow-lg); }
     .hero__card-rating { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
     .hero__card-rating .score { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 700; color: var(--teal); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
@@ -148,9 +158,27 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     .team-pill strong { display: block; font-size: .875rem; font-weight: 600; }
     .team-pill span { font-size: .775rem; color: var(--gray); }
     .midcta { text-align: center; padding: 80px 0; }
-    .midcta h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; color: #fff; margin-bottom: 14px; max-width: 560px; margin-left: auto; margin-right: auto; }
-    .midcta p { color: rgba(255,255,255,.75); font-size: 1rem; margin-bottom: 32px; }
-    .hours-strip { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: center; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 24px 32px; margin-top: 40px; }
+    .midcta h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; color: #fff; margin-bottom: 14px; max-width: 620px; margin-left: auto; margin-right: auto; }
+    .midcta p { color: rgba(255,255,255,.8); font-size: 1.02rem; margin-bottom: 28px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .midcta__ctas { gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .midcta__ctas .btn-lg { padding: 16px 28px; font-size: 1rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .midcta__ctas .btn-primary.btn-lg { box-shadow: 0 8px 28px rgba(217,107,47,.4); }
+    .midcta__ctas .btn-primary.btn-lg:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(217,107,47,.5); }
+    .midcta__reassure { margin-top: 18px; color: rgba(255,255,255,.7); font-size: .85rem; font-weight: 500; }
+    @media (max-width: 600px) {
+      .midcta__ctas { flex-direction: column; align-items: stretch; }
+      .midcta__ctas .btn-lg { justify-content: center; width: 100%; }
+      .midcta__reassure { font-size: .8rem; line-height: 1.8; }
+    }
+    .hours-strip { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: center; align-items: center; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 24px 32px; margin-top: 40px; }
+    .hours-strip__status { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding-left: 24px; margin-left: 8px; border-left: 1px solid rgba(255,255,255,.15); }
+    .hours-strip__status-line { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 600; white-space: nowrap; }
+    .hours-strip__status-line::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 10px rgba(74,222,128,.6); animation: statusPulse 2s ease-in-out infinite; }
+    .hours-strip__status--closed .hours-strip__status-line::before { background: #F87171; box-shadow: 0 0 10px rgba(248,113,113,.5); }
+    @keyframes statusPulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+    .hours-strip__call { display: inline-flex; align-items: center; gap: 6px; background: var(--orange); color: #fff; font-weight: 600; font-size: .85rem; padding: 8px 16px; border-radius: 50px; text-decoration: none; white-space: nowrap; font-variant-numeric: tabular-nums; transition: transform .15s, box-shadow .15s; }
+    .hours-strip__call:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(217,107,47,.4); color: #fff; }
+    @media (max-width: 700px) { .hours-strip__status { border-left: none; padding-left: 0; margin-left: 0; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.15); width: 100%; align-items: center; } }
     .hours-item { text-align: center; }
     .hours-item strong { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.55); margin-bottom: 4px; }
     .hours-item span { font-size: .88rem; color: #fff; font-weight: 500; font-variant-numeric: tabular-nums; }
@@ -165,6 +193,21 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     .blog-read-more { font-size: .83rem; font-weight: 600; color: var(--teal); margin-top: 4px; display: inline-block; }
     .blog-card:hover .blog-read-more { text-decoration: underline; }
     @media (max-width: 900px) { .hero__inner { grid-template-columns: 1fr; } .hero__card { width: 100%; } .afspraak-grid { grid-template-columns: 1fr; } }
+    /* Mobile sticky CTA-bar */
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 900px) {
+      .mobile-cta-bar {
+        position: fixed; bottom: 0; left: 0; right: 0; z-index: var(--z-fab);
+        background: #fff; border-top: 1px solid var(--gray-light);
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); gap: 8px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,.12);
+        display: flex; transform: translateY(100%); transition: transform .25s ease;
+      }
+      .mobile-cta-bar.visible { transform: translateY(0); }
+      .mobile-cta-bar a { flex: 1; justify-content: center; padding: 12px 10px; font-size: .9rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+      .fab { bottom: 84px; }
+      body { padding-bottom: 72px; }
+    }
     @media (max-width: 600px) { .reviews-aggregate { flex-direction: column; text-align: center; } .agg-divider { width: 48px; height: 1px; } }
   </style>
 {% endblock %}
@@ -193,11 +236,11 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
           {{ hero.title_3 }}
         </h1>
         <p class="hero__sub fade-up">{{ hero.subtitle }}</p>
-        <div class="btn-group fade-up">
-          <a href="#afspraak" class="btn btn-primary">📅 Maak een afspraak</a>
-          <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-white">💬 WhatsApp ons</a>
-          <a href="tel:{{ general.phone }}" class="btn btn-ghost">📞 {{ general.phone }}</a>
+        <div class="btn-group hero__ctas fade-up">
+          <a href="#afspraak" class="btn btn-primary btn-lg">📅 Maak een afspraak</a>
+          <a href="tel:{{ general.phone }}" class="btn btn-white btn-lg">📞 Bel direct: {{ general.phone }}</a>
         </div>
+        <p class="hero__cta-note fade-up">Geen verwijzing nodig · Gemiddeld binnen 3 werkdagen terecht</p>
       </div>
       <div class="hero__card fade-up">
         <div class="hero__card-rating">
@@ -432,12 +475,13 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
 <!-- Mid CTA -->
 <section class="section--teal midcta" id="contact">
   <div class="container">
-    <h2 class="fade-up">Klaar om u beter te voelen?</h2>
-    <p class="fade-up">Wij staan klaar van maandag t/m vrijdag. Meestal geen verwijzing nodig.</p>
-    <div class="btn-group fade-up" style="justify-content:center">
-      <a href="https://wa.me/{{ general.whatsapp }}?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken" class="btn btn-primary">💬 WhatsApp: 06-15867817</a>
-      <a href="tel:{{ general.phone }}" class="btn btn-white">📞 Bel: {{ general.phone }}</a>
+    <h2 class="fade-up">Klaar om van uw klacht af te komen?</h2>
+    <p class="fade-up">Bel ons vandaag nog — dan plannen we samen uw eerste afspraak in. Meestal binnen 3 werkdagen terecht, geen verwijzing nodig.</p>
+    <div class="btn-group midcta__ctas fade-up">
+      <a href="tel:{{ general.phone }}" class="btn btn-primary btn-lg">📞 Bel nu: {{ general.phone }}</a>
+      <a href="https://wa.me/{{ general.whatsapp }}?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken" class="btn btn-white btn-lg">💬 Liever appen?</a>
     </div>
+    <p class="midcta__reassure fade-up">✓ Geen verwijzing nodig &nbsp;·&nbsp; ✓ Vergoed door zorgverzekeraar &nbsp;·&nbsp; ✓ {{ general.review_score }}/10 op ZorgkaartNederland</p>
     <div class="hours-strip fade-up">
       <div class="hours-item"><strong>Maandag</strong><span>{{ hours.monday }}</span></div>
       <div class="hours-item"><strong>Dinsdag</strong><span>{{ hours.tuesday }}</span></div>
@@ -445,6 +489,10 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
       <div class="hours-item"><strong>Donderdag</strong><span>{{ hours.thursday }}</span></div>
       <div class="hours-item"><strong>Vrijdag</strong><span>{{ hours.friday }}</span></div>
       <div class="hours-item"><strong>Telefoon</strong><span>{{ hours.phone_hours }}</span></div>
+      <div class="hours-strip__status" id="hoursStatus" data-mon="{{ hours.monday }}" data-tue="{{ hours.tuesday }}" data-wed="{{ hours.wednesday }}" data-thu="{{ hours.thursday }}" data-fri="{{ hours.friday }}">
+        <span class="hours-strip__status-line" id="hoursStatusLine">Nu open</span>
+        <a href="tel:{{ general.phone }}" class="hours-strip__call">📞 {{ general.phone }}</a>
+      </div>
     </div>
   </div>
 </section>
@@ -482,6 +530,10 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
 {% endblock %}
 
 {% block body_end %}
+<div class="mobile-cta-bar" id="mobileCtaBar">
+  <a href="#afspraak" class="btn btn-primary">📅 Afspraak</a>
+  <a href="tel:{{ general.phone }}" class="btn btn-white">📞 Bel nu</a>
+</div>
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
@@ -496,6 +548,65 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
   document.querySelectorAll('.pain-grid, .usp-grid, .diensten-grid, .reviews-grid, .blog-grid, .team-grid').forEach(grid => {
     grid.querySelectorAll('.fade-up').forEach((card, i) => { card.style.transitionDelay = `${i * 70}ms`; });
   });
+
+  // Mobile sticky CTA-bar: verschijnt zodra hero uit beeld is
+  (function() {
+    const bar = document.getElementById('mobileCtaBar');
+    const hero = document.querySelector('.hero');
+    if (!bar || !hero) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { bar.classList.toggle('visible', !e.isIntersecting); });
+    }, { threshold: 0, rootMargin: '-80px 0px 0px 0px' });
+    io.observe(hero);
+  })();
+
+  // Hours-strip: open/gesloten status op basis van huidige tijd
+  (function() {
+    const wrap = document.getElementById('hoursStatus');
+    if (!wrap) return;
+    const line = document.getElementById('hoursStatusLine');
+    const dayKeys = ['sun','mon','tue','wed','thu','fri','sat'];
+    const dataKeys = ['', 'mon','tue','wed','thu','fri',''];
+    function parseRange(str) {
+      if (!str) return null;
+      const m = str.match(/(\d{1,2})[:.]?(\d{2})?\s*[-–]\s*(\d{1,2})[:.]?(\d{2})?/);
+      if (!m) return null;
+      return { open: parseInt(m[1],10)*60 + parseInt(m[2]||'0',10), close: parseInt(m[3],10)*60 + parseInt(m[4]||'0',10) };
+    }
+    function findNextOpen(day, mins) {
+      for (let offset = 0; offset <= 7; offset++) {
+        const d = (day + offset) % 7;
+        const k = dataKeys[d];
+        const r = k ? parseRange(wrap.dataset[k]) : null;
+        if (!r) continue;
+        if (offset === 0 && mins >= r.open) continue;
+        const hh = Math.floor(r.open/60), mm = String(r.open%60).padStart(2,'0');
+        const labels = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+        const when = offset === 0 ? 'vandaag' : offset === 1 ? 'morgen' : labels[d];
+        return `opent ${when} om ${hh}:${mm}`;
+      }
+      return '';
+    }
+    function update() {
+      const now = new Date();
+      const day = now.getDay();
+      const mins = now.getHours()*60 + now.getMinutes();
+      const key = dataKeys[day];
+      const range = key ? parseRange(wrap.dataset[key]) : null;
+      const open = range && mins >= range.open && mins < range.close;
+      if (open) {
+        wrap.classList.remove('hours-strip__status--closed');
+        const hh = Math.floor(range.close/60), mm = String(range.close%60).padStart(2,'0');
+        line.textContent = `Nu open · sluit om ${hh}:${mm}`;
+      } else {
+        wrap.classList.add('hours-strip__status--closed');
+        const next = findNextOpen(day, mins);
+        line.textContent = next ? `Nu gesloten · ${next}` : 'Nu gesloten';
+      }
+    }
+    update();
+    setInterval(update, 60000);
+  })();
 
   // Berekent Pasen voor een gegeven jaar (Gregorian)
   function getEaster(year) {
