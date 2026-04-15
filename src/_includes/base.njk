@@ -11,8 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
   <style>
+    /* Sticky header wrapper (status-bar + nav samen) */
+    .site-header { position: sticky; top: 0; z-index: var(--z-sticky); }
+    .site-header .nav { position: static; }
     /* Status-bar (live open/gesloten) */
-    .status-bar { background: var(--cream); color: var(--gray); font-size: .8rem; font-weight: 500; line-height: 1; border-bottom: 1px solid var(--gray-light); }
+    .status-bar { background: var(--teal-pale); color: var(--gray); font-size: .8rem; font-weight: 500; line-height: 1; border-bottom: 1px solid rgba(27,94,107,.08); }
     .status-bar__inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 8px 0; min-height: 28px; }
     .status-bar__status { display: inline-flex; align-items: center; gap: 8px; color: var(--dark); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .status-bar__status::before { content: '●'; color: #22C55E; font-size: .9rem; line-height: 1; animation: statusDot 2s ease-in-out infinite; }
@@ -35,34 +38,36 @@
 {% block body_start %}{% endblock %}
 
 {% block nav %}
-<div class="status-bar" id="navStatus" data-mon="{{ hours.monday }}" data-tue="{{ hours.tuesday }}" data-wed="{{ hours.wednesday }}" data-thu="{{ hours.thursday }}" data-fri="{{ hours.friday }}">
-  <div class="container status-bar__inner">
-    <span class="status-bar__status" id="navStatusLine">Nu open</span>
-    <a href="tel:{{ general.phone }}" class="status-bar__call">📞 {{ general.phone }}</a>
-  </div>
-</div>
-<nav class="nav">
-  <div class="container nav__inner">
-    <a href="/" class="nav__logo">
-      {{ general.name }}
-      <span>Fysiotherapeut zonder verwijzing</span>
-    </a>
-    <ul class="nav__links">
-      <li><a href="/#behandelingen">Behandelingen</a></li>
-      <li><a href="/#afspraak">Afspraak maken</a></li>
-      <li><a href="/#team">Team</a></li>
-      <li><a href="/#blog">Blog</a></li>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="/#contact">Contact</a></li>
-    </ul>
-    <div class="nav__actions">
-      <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 Afspraak maken</a>
+<div class="site-header">
+  <div class="status-bar" id="navStatus" data-mon="{{ hours.monday }}" data-tue="{{ hours.tuesday }}" data-wed="{{ hours.wednesday }}" data-thu="{{ hours.thursday }}" data-fri="{{ hours.friday }}">
+    <div class="container status-bar__inner">
+      <span class="status-bar__status" id="navStatusLine">Nu open</span>
+      <a href="tel:{{ general.phone }}" class="status-bar__call">📞 {{ general.phone }}</a>
     </div>
-    <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
-</nav>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        {{ general.name }}
+        <span>Fysiotherapeut zonder verwijzing</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="/#behandelingen">Behandelingen</a></li>
+        <li><a href="/#afspraak">Afspraak maken</a></li>
+        <li><a href="/#team">Team</a></li>
+        <li><a href="/#blog">Blog</a></li>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 Afspraak maken</a>
+      </div>
+      <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="/#behandelingen" onclick="closeMobileMenu()">Behandelingen</a>
