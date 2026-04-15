@@ -1,21 +1,13 @@
 ---
 title: Bedankt voor je aanmelding | Fysiopraktijk Zeist
 description: Bedankt voor je aankoop bij Fysiopraktijk Zeist. We nemen snel contact met je op.
+body_class: bedankt-page
 ---
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/main.css" />
+{% extends "base.njk" %}
+
+{% block page_styles %}
   <style>
-    body { min-height: 100dvh; display: flex; flex-direction: column; }
+    body.bedankt-page { min-height: 100dvh; display: flex; flex-direction: column; }
     /* Bedankt sectie */
     .bedankt { flex: 1; display: flex; align-items: center; justify-content: center; padding: 64px 24px; }
     .bedankt__card { background: #fff; border-radius: 20px; box-shadow: var(--shadow); max-width: 600px; width: 100%; padding: 56px 48px; text-align: center; }
@@ -31,11 +23,12 @@ description: Bedankt voor je aankoop bij Fysiopraktijk Zeist. We nemen snel cont
     .bedankt__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
     /* Footer */
     .footer-mini { background: var(--dark); color: rgba(255,255,255,.5); padding: 20px 0; font-size: .8rem; text-align: center; }
+    .footer-mini a { color: rgba(255,255,255,.5); }
     @media (max-width: 600px) { .bedankt__card { padding: 36px 24px; } }
   </style>
-</head>
-<body>
+{% endblock %}
 
+{% block nav %}
 <nav class="nav">
   <div class="container nav__inner">
     <a href="/" class="nav__logo">
@@ -44,7 +37,9 @@ description: Bedankt voor je aankoop bij Fysiopraktijk Zeist. We nemen snel cont
     </a>
   </div>
 </nav>
+{% endblock %}
 
+{% block content %}
 <div class="bedankt">
   <div class="bedankt__card">
     <div class="bedankt__icon">✓</div>
@@ -81,17 +76,12 @@ description: Bedankt voor je aankoop bij Fysiopraktijk Zeist. We nemen snel cont
     </div>
   </div>
 </div>
+{% endblock %}
 
+{% block footer %}
 <div class="footer-mini">
-  © 2026 {{ general.name }} — <a href="tel:{{ general.phone }}" style="color:rgba(255,255,255,.5)">{{ general.phone }}</a>
+  © 2026 {{ general.name }} — <a href="tel:{{ general.phone }}">{{ general.phone }}</a>
 </div>
+{% endblock %}
 
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) { window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; }); }
-    });
-  }
-</script>
-</body>
-</html>
+{% block fab %}{% endblock %}

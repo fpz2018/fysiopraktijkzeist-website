@@ -2,18 +2,9 @@
 title: Tarieven 2026 | Fysiopraktijk Zeist
 description: Actuele tarieven van Fysiopraktijk Zeist voor 2026. Fysiotherapie, FysioFitness en overige diensten. Veelal vergoed door uw zorgverzekeraar.
 ---
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/main.css" />
+{% extends "base.njk" %}
+
+{% block page_styles %}
   <style>
     /* Hero */
     .page-hero { background: var(--teal); padding: 56px 0 48px; }
@@ -43,44 +34,9 @@ description: Actuele tarieven van Fysiopraktijk Zeist voor 2026. Fysiotherapie, 
     .tarieven-table td.warning-price { color: var(--orange); }
     @media (max-width: 600px) { .tarieven-table td, .tarieven-table th { padding: 11px 12px; } }
   </style>
-</head>
-<body>
+{% endblock %}
 
-<!-- Nav -->
-<nav class="nav">
-  <div class="container nav__inner">
-    <a href="/" class="nav__logo">
-      {{ general.name }}
-      <span>Fysiotherapeut zonder verwijzing</span>
-    </a>
-    <ul class="nav__links">
-      <li><a href="/#behandelingen">Behandelingen</a></li>
-      <li><a href="/#afspraak">Afspraak maken</a></li>
-      <li><a href="/#team">Team</a></li>
-      <li><a href="/#blog">Blog</a></li>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="/#contact">Contact</a></li>
-    </ul>
-    <div class="nav__actions">
-      <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 Afspraak maken</a>
-    </div>
-    <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/#behandelingen" onclick="closeMobileMenu()">Behandelingen</a>
-  <a href="/#afspraak" onclick="closeMobileMenu()">Afspraak maken</a>
-  <a href="/#team" onclick="closeMobileMenu()">Team</a>
-  <a href="/#blog" onclick="closeMobileMenu()">Blog</a>
-  <a href="/shop" onclick="closeMobileMenu()">Shop</a>
-  <a href="/#contact" onclick="closeMobileMenu()">Contact</a>
-  <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="margin-top:8px">💬 WhatsApp afspraak</a>
-  <a href="tel:{{ general.phone }}" class="btn btn-outline" style="margin-top:4px">📞 {{ general.phone }}</a>
-</div>
-
+{% block content %}
 <!-- Hero -->
 <section class="page-hero">
   <div class="container">
@@ -178,63 +134,4 @@ description: Actuele tarieven van Fysiopraktijk Zeist voor 2026. Fysiotherapie, 
     </div>
   </div>
 </main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <div class="nav__logo">{{ general.name }}<span>Fysiotherapeut zonder verwijzing</span></div>
-        <p>Wij behandelen de oorzaak van uw klacht — met persoonlijke aandacht en bewezen methoden. Al meer dan 35 jaar de fysiotherapiepraktijk van Zeist en omstreken.</p>
-        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-          <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 WhatsApp</a>
-          <a href="tel:{{ general.phone }}" style="padding:10px 18px;font-size:.85rem;display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2);border-radius:50px">📞 {{ general.phone }}</a>
-        </div>
-      </div>
-      <div class="footer__col">
-        <h4>Openingstijden</h4>
-        <ul class="footer__hours">
-          <li><span>Maandag</span><span>{{ hours.monday }}</span></li>
-          <li><span>Dinsdag</span><span>{{ hours.tuesday }}</span></li>
-          <li><span>Woensdag</span><span>{{ hours.wednesday }}</span></li>
-          <li><span>Donderdag</span><span>{{ hours.thursday }}</span></li>
-          <li><span>Vrijdag</span><span>{{ hours.friday }}</span></li>
-          <li><span>Zat &amp; Zon</span><span>Gesloten</span></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Contact</h4>
-        <ul class="footer__links">
-          <li>{{ general.address }}</li>
-          <li style="margin-top:10px"><a href="tel:{{ general.phone }}">📞 {{ general.phone }}</a></li>
-          <li><a href="https://wa.me/{{ general.whatsapp }}">💬 WhatsApp</a></li>
-          <li><a href="mailto:{{ general.email }}">✉ {{ general.email }}</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2026 {{ general.name }} — BIG-geregistreerd · {{ general.review_score }}/10 op ZorgkaartNederland</span>
-      <div class="footer__legal">
-        <a href="/veelgestelde-vragen">FAQ</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
-        <a href="/tarieven" style="color:rgba(255,255,255,.7)">Tarieven 2026</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<a class="fab" href="https://wa.me/{{ general.whatsapp }}?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken" aria-label="WhatsApp">💬</a>
-
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) { window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; }); }
-    });
-  }
-</script>
-</body>
-</html>
+{% endblock %}

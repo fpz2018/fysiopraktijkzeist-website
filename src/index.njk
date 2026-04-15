@@ -2,18 +2,13 @@
 title: Fysiotherapeut in Zeist | Fysiopraktijk Zeist — Geen verwijzing nodig
 description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry needling, echografie en meer. Gemiddeld binnen 3 dagen geholpen.
 ---
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/main.css" />
+{% extends "base.njk" %}
+
+{% block head_extra %}
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+{% endblock %}
+
+{% block page_styles %}
   <style>
     /* Homepage-specifieke styles */
     .hero { background: var(--teal); padding: 80px 0 72px; position: relative; overflow: hidden; }
@@ -172,8 +167,9 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     @media (max-width: 900px) { .hero__inner { grid-template-columns: 1fr; } .hero__card { width: 100%; } .afspraak-grid { grid-template-columns: 1fr; } }
     @media (max-width: 600px) { .reviews-aggregate { flex-direction: column; text-align: center; } .agg-divider { width: 48px; height: 1px; } }
   </style>
-</head>
-<body>
+{% endblock %}
+
+{% block body_start %}
 <!-- Netlify Forms detectie (verborgen) -->
 <form name="belmetrug" data-netlify="true" hidden>
   <input type="text" name="naam" />
@@ -181,42 +177,9 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
   <input type="date" name="datum" />
   <select name="tijdvak"><option>9:00–11:00</option></select>
 </form>
+{% endblock %}
 
-<!-- Nav -->
-<nav class="nav">
-  <div class="container nav__inner">
-    <a href="/" class="nav__logo">
-      {{ general.name }}
-      <span>Fysiotherapeut zonder verwijzing</span>
-    </a>
-    <ul class="nav__links">
-      <li><a href="#behandelingen">Behandelingen</a></li>
-      <li><a href="#afspraak">Afspraak maken</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav__actions">
-      <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 Afspraak maken</a>
-    </div>
-    <button class="nav__hamburger" id="menuBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#behandelingen" onclick="closeMobileMenu()">Behandelingen</a>
-  <a href="#afspraak" onclick="closeMobileMenu()">Afspraak maken</a>
-  <a href="#team" onclick="closeMobileMenu()">Team</a>
-  <a href="#blog" onclick="closeMobileMenu()">Blog</a>
-  <a href="/shop" onclick="closeMobileMenu()">Shop</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-  <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="margin-top:8px">💬 WhatsApp afspraak</a>
-  <a href="tel:{{ general.phone }}" class="btn btn-outline" style="margin-top:4px">📞 {{ general.phone }}</a>
-</div>
-
+{% block content %}
 <!-- Hero -->
 <section class="hero">
   <div class="container">
@@ -516,67 +479,10 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     </div>
   </div>
 </section>
+{% endblock %}
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <div class="nav__logo">{{ general.name }}<span>Fysiotherapeut zonder verwijzing</span></div>
-        <p>Wij behandelen de oorzaak van uw klacht — met persoonlijke aandacht en bewezen methoden. Al meer dan 35 jaar de fysiotherapiepraktijk van Zeist en omstreken.</p>
-        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-          <a href="https://wa.me/{{ general.whatsapp }}" class="btn btn-primary" style="padding:10px 18px;font-size:.85rem">💬 WhatsApp</a>
-          <a href="tel:{{ general.phone }}" style="padding:10px 18px;font-size:.85rem;display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.2);border-radius:50px">📞 {{ general.phone }}</a>
-        </div>
-      </div>
-      <div class="footer__col">
-        <h4>Openingstijden</h4>
-        <ul class="footer__hours">
-          <li><span>Maandag</span><span>{{ hours.monday }}</span></li>
-          <li><span>Dinsdag</span><span>{{ hours.tuesday }}</span></li>
-          <li><span>Woensdag</span><span>{{ hours.wednesday }}</span></li>
-          <li><span>Donderdag</span><span>{{ hours.thursday }}</span></li>
-          <li><span>Vrijdag</span><span>{{ hours.friday }}</span></li>
-          <li><span>Zat &amp; Zon</span><span>Gesloten</span></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Contact</h4>
-        <ul class="footer__links">
-          <li>{{ general.address }}</li>
-          <li style="margin-top:10px"><a href="tel:{{ general.phone }}">📞 {{ general.phone }}</a></li>
-          <li><a href="https://wa.me/{{ general.whatsapp }}">💬 06-15867817</a></li>
-          <li><a href="mailto:{{ general.email }}">✉ {{ general.email }}</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2026 {{ general.name }} — BIG-geregistreerd · {{ general.review_score }}/10 op ZorgkaartNederland</span>
-      <div class="footer__legal">
-        <a href="/veelgestelde-vragen">FAQ</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
-        <a href="/betalingsvoorwaarden">Betalingsvoorwaarden</a>
-        <a href="/tarieven">Tarieven 2026</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<a class="fab" href="https://wa.me/{{ general.whatsapp }}?text=Hallo%2C%20ik%20wil%20graag%20een%20afspraak%20maken" aria-label="WhatsApp">💬</a>
-
+{% block body_end %}
 <script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
-
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) { window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; }); }
-    });
-  }
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
@@ -603,30 +509,27 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     return new Date(year, month - 1, day);
   }
 
-  // Geeft set van feestdagen (YYYY-MM-DD) voor een jaar
   function getNLFeestdagen(year) {
     const add = (d, n) => { const r = new Date(d); r.setDate(r.getDate() + n); return r; };
     const fmt = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     const pasen = getEaster(year);
-    // Koningsdag: 27 april, maar 26 april als 27 een zondag is
     const koningsdag = new Date(year, 3, 27).getDay() === 0
       ? new Date(year, 3, 26) : new Date(year, 3, 27);
     return new Set([
-      fmt(new Date(year, 0, 1)),    // Nieuwjaarsdag
-      fmt(add(pasen, -2)),           // Goede Vrijdag
-      fmt(pasen),                    // Eerste Paasdag
-      fmt(add(pasen, 1)),            // Tweede Paasdag
-      fmt(koningsdag),               // Koningsdag
-      fmt(new Date(year, 4, 5)),     // Bevrijdingsdag
-      fmt(add(pasen, 39)),           // Hemelvaartsdag
-      fmt(add(pasen, 49)),           // Eerste Pinksterdag
-      fmt(add(pasen, 50)),           // Tweede Pinksterdag
-      fmt(new Date(year, 11, 25)),   // Eerste Kerstdag
-      fmt(new Date(year, 11, 26)),   // Tweede Kerstdag
+      fmt(new Date(year, 0, 1)),
+      fmt(add(pasen, -2)),
+      fmt(pasen),
+      fmt(add(pasen, 1)),
+      fmt(koningsdag),
+      fmt(new Date(year, 4, 5)),
+      fmt(add(pasen, 39)),
+      fmt(add(pasen, 49)),
+      fmt(add(pasen, 50)),
+      fmt(new Date(year, 11, 25)),
+      fmt(new Date(year, 11, 26)),
     ]);
   }
 
-  // Datumkiezer: min = vandaag, alleen ma-do en geen feestdagen
   const datumInput = document.getElementById('callbackDatum');
   if (datumInput) {
     const today = new Date();
@@ -634,7 +537,7 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
     datumInput.addEventListener('change', function() {
       const val = this.value;
       const date = new Date(val + 'T12:00:00');
-      const day = date.getDay(); // 0=zo … 6=za
+      const day = date.getDay();
       const feestdagen = getNLFeestdagen(date.getFullYear());
       const err = document.getElementById('callbackDateError');
       if (day === 0 || day >= 5) {
@@ -657,5 +560,4 @@ description: Fysiotherapeut in Zeist zonder verwijzing. Manuele therapie, dry ne
       .catch(() => form.submit());
   }
 </script>
-</body>
-</html>
+{% endblock %}
