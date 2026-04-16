@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "interval_seconds": 5,
+  "items": [
+    {
+      "text": "📢 Nieuwe valpreventie groep start in mei — bel 030-721 07 71",
+      "active": true
+    },
+    {
+      "text": "✅ Geen verwijzing nodig — direct een afspraak via WhatsApp",
+      "active": true
+    }
+  ]
+}

@@ -177,6 +177,20 @@ collections:
           - { label: "Vrijdag", name: "friday", widget: "string" }
           - { label: "Telefoon bereikbaar", name: "phone_hours", widget: "string" }
 
+      - label: "Nieuwsticker (bovenbalk)"
+        name: "ticker"
+        file: "src/_data/ticker.json"
+        fields:
+          - { label: "Ticker tonen", name: "enabled", widget: "boolean", default: true, hint: "Zet uit om de ticker volledig te verbergen" }
+          - { label: "Wisselsnelheid (seconden)", name: "interval_seconds", widget: "number", default: 5, min: 2, max: 30, value_type: "int" }
+          - label: "Berichten"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.text}}"
+            fields:
+              - { label: "Bericht (begin met emoji indien gewenst)", name: "text", widget: "string", hint: "Bijv. 📢 Nieuwe valpreventie groep start in mei" }
+              - { label: "Actief tonen", name: "active", widget: "boolean", default: true, hint: "Zet uit om dit bericht te bewaren maar niet te tonen" }
+
       - label: "Team"
         name: "team"
         file: "src/_data/team.json"

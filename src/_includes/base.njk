@@ -16,19 +16,33 @@
     .site-header .nav { position: static; }
     /* Status-bar (live open/gesloten) */
     .status-bar { background: var(--teal-pale); color: var(--gray); font-size: .8rem; font-weight: 500; line-height: 1; border-bottom: 1px solid rgba(27,94,107,.08); }
-    .status-bar__inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 8px 0; min-height: 28px; }
+    .status-bar__inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; padding: 8px 0; min-height: 28px; }
     .status-bar__status { display: inline-flex; align-items: center; gap: 8px; color: var(--dark); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .status-bar__status::before { content: '●'; color: #22C55E; font-size: .9rem; line-height: 1; animation: statusDot 2s ease-in-out infinite; }
     .status-bar--closed .status-bar__status::before { color: #EF4444; }
     @keyframes statusDot { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
     .status-bar__call { color: var(--teal); font-weight: 600; text-decoration: none; font-variant-numeric: tabular-nums; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: color .15s; }
     .status-bar__call:hover { color: var(--teal-light); }
-    @media (max-width: 600px) {
+
+    /* Nieuwsticker (midden) */
+    .status-bar__ticker { position: relative; min-height: 1em; text-align: center; color: var(--teal); font-weight: 600; overflow: hidden; }
+    .status-bar__ticker-item { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .6s ease; padding: 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    /* Pre-JS: toon alleen het eerste item zodat de balk de juiste hoogte heeft */
+    .status-bar__ticker-item:first-child { position: relative; opacity: 1; }
+    /* JS-ready: alle items reset, alleen .is-active is zichtbaar */
+    .status-bar__ticker.js-ready .status-bar__ticker-item { position: absolute; opacity: 0; }
+    .status-bar__ticker.js-ready .status-bar__ticker-item.is-active { position: relative; opacity: 1; }
+
+    @media (max-width: 760px) {
+      .status-bar__inner { grid-template-columns: auto auto; grid-template-areas: "status call" "ticker ticker"; row-gap: 4px; padding: 7px 0; }
+      .status-bar__status { grid-area: status; }
+      .status-bar__call { grid-area: call; justify-self: end; }
+      .status-bar__ticker { grid-area: ticker; text-align: left; padding-top: 2px; border-top: 1px solid rgba(27,94,107,.08); padding-top: 6px; margin-top: 2px; }
+      .status-bar__ticker-item { white-space: normal; }
       .status-bar { font-size: .72rem; }
-      .status-bar__inner { padding: 7px 0; gap: 10px; }
       .status-bar__call { font-size: .78rem; }
     }
-    @media (prefers-reduced-motion: reduce) { .status-bar__status::before { animation: none; } }
+    @media (prefers-reduced-motion: reduce) { .status-bar__status::before { animation: none; } .status-bar__ticker-item { transition: none; } }
   </style>
   {% block head_extra %}{% endblock %}
   {% block page_styles %}{% endblock %}
@@ -39,9 +53,20 @@
 
 {% block nav %}
 <div class="site-header">
+  {% set hasTicker = false %}
+  {% if ticker.enabled and ticker.items %}
+    {% for item in ticker.items %}{% if item.active and item.text %}{% set hasTicker = true %}{% endif %}{% endfor %}
+  {% endif %}
   <div class="status-bar" id="navStatus" data-mon="{{ hours.monday }}" data-tue="{{ hours.tuesday }}" data-wed="{{ hours.wednesday }}" data-thu="{{ hours.thursday }}" data-fri="{{ hours.friday }}">
     <div class="container status-bar__inner">
       <span class="status-bar__status" id="navStatusLine">Nu open</span>
+      {% if hasTicker %}
+      <div class="status-bar__ticker" id="navTicker" data-interval="{{ ticker.interval_seconds or 5 }}" aria-live="polite">
+        {% for item in ticker.items %}{% if item.active and item.text %}<span class="status-bar__ticker-item">{{ item.text }}</span>{% endif %}{% endfor %}
+      </div>
+      {% else %}
+      <span></span>
+      {% endif %}
       <a href="tel:{{ general.phone }}" class="status-bar__call">📞 {{ general.phone }}</a>
     </div>
   </div>
@@ -197,6 +222,24 @@
     update();
     setInterval(update, 60000);
     window.addEventListener('resize', update);
+  })();
+
+  // Nieuwsticker fade-cyclus
+  (function() {
+    const ticker = document.getElementById('navTicker');
+    if (!ticker) return;
+    const items = ticker.querySelectorAll('.status-bar__ticker-item');
+    if (!items.length) return;
+    items[0].classList.add('is-active');
+    ticker.classList.add('js-ready');
+    if (items.length < 2) return;
+    const interval = Math.max(2, parseInt(ticker.dataset.interval, 10) || 5) * 1000;
+    let i = 0;
+    setInterval(() => {
+      items[i].classList.remove('is-active');
+      i = (i + 1) % items.length;
+      items[i].classList.add('is-active');
+    }, interval);
   })();
 </script>
 </body>
