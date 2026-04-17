@@ -237,7 +237,10 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: 92px;
+}
+@media (max-width: 600px) {
+  .nav__inner { height: 72px; }
 }
 .nav__logo {
   font-family: var(--font-serif);
@@ -257,12 +260,12 @@ textarea:focus-visible {
   text-transform: uppercase;
 }
 .nav__logo-img {
-  height: 52px;
+  height: 76px;
   width: auto;
   display: block;
 }
 @media (max-width: 600px) {
-  .nav__logo-img { height: 42px; }
+  .nav__logo-img { height: 56px; }
 }
 .nav__links {
   display: flex;
