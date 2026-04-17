@@ -21,7 +21,7 @@
   "site_tagline": "Fysiotherapeut in Zeist — geen verwijzing nodig",
   "address_city": "Zeist",
   "address_postal": "3706 AA",
-  "site_url": "https://fysiopraktijkzeist.nl",
+  "site_url": "https://fysiopraktijkzeist.netlify.app",
   "logo_url": "/images/uploads/logo-fpz-oud.png",
   "service_areas": [
     "Zeist",
