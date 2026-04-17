@@ -183,9 +183,9 @@
   </div>
   <nav class="nav">
     <div class="container nav__inner">
-      <a href="/" class="nav__logo">
-        {{ general.name }}
-        <span>Fysiotherapeut zonder verwijzing</span>
+      <a href="/" class="nav__logo" aria-label="{{ general.name }} — home">
+        {% if general.logo_url %}<img src="{{ general.logo_url }}" alt="{{ general.name }}" width="176" height="96" class="nav__logo-img" />{% else %}{{ general.name }}
+        <span>Fysiotherapeut zonder verwijzing</span>{% endif %}
       </a>
       <ul class="nav__links">
         <li><a href="/#behandelingen">Behandelingen</a></li>
