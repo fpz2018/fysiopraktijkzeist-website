@@ -34,6 +34,16 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/css");
 
+  // Favicons & web app manifest (worden aangeroepen vanuit base.njk)
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/favicon-16x16.png");
+  eleventyConfig.addPassthroughCopy("src/favicon-32x32.png");
+  eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("src/android-chrome-192x192.png");
+  eleventyConfig.addPassthroughCopy("src/android-chrome-512x512.png");
+  eleventyConfig.addPassthroughCopy("src/site.webmanifest");
+
   // Datum filter
   eleventyConfig.addFilter("dateformat", function(date) {
     return new Date(date).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' });
