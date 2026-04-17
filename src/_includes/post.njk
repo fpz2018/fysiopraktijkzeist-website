@@ -2,6 +2,40 @@
 
 {% block title %}{{ title }} | {{ general.name }}{% endblock %}
 {% block description %}{{ excerpt }}{% endblock %}
+{% block og_type %}article{% endblock %}
+
+{% block head_extra %}
+  {% set _site = general.site_url | stripTrailingSlash %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ title | dump | safe }},
+    "description": {{ excerpt | dump | safe }},
+    "datePublished": {{ page.date | dateToISO | dump | safe }},
+    "dateModified": {{ page.date | dateToISO | dump | safe }},
+    "mainEntityOfPage": "{{ _site }}{{ page.url }}",
+    {% if thumbnail %}"image": "{{ _site }}{{ thumbnail }}",{% endif %}
+    "author": { "@id": "{{ _site }}/#marc" },
+    "publisher": { "@id": "{{ _site }}/#praktijk" },
+    {% if category %}"articleSection": {{ category | dump | safe }},{% endif %}
+    "inLanguage": "nl-NL"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ _site }}/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ _site }}/#blog" },
+      { "@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}, "item": "{{ _site }}{{ page.url }}" }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% if thumbnail %}{% set ogImage = thumbnail %}{% endif %}
 
 {% block page_styles %}
   <style>

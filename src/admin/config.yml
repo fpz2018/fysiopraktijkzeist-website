@@ -134,9 +134,36 @@ collections:
           - { label: "Telefoonnummer", name: "phone", widget: "string" }
           - { label: "WhatsApp nummer (met landcode, zonder +)", name: "whatsapp", widget: "string" }
           - { label: "E-mailadres", name: "email", widget: "string" }
-          - { label: "Adres", name: "address", widget: "string" }
+          - { label: "Adres (volledig, voor display)", name: "address", widget: "string" }
+          - { label: "Straat + nummer (voor schema)", name: "address_street", widget: "string", required: false }
+          - { label: "Postcode (voor schema)", name: "address_postal", widget: "string", required: false }
+          - { label: "Plaats (voor schema)", name: "address_city", widget: "string", required: false }
+          - { label: "Land (NL/BE/DE)", name: "address_country", widget: "string", default: "NL", required: false }
           - { label: "Gemiddelde beoordeling", name: "review_score", widget: "string" }
           - { label: "Aantal beoordelingen", name: "review_count", widget: "number" }
+          - { label: "── SEO & vindbaarheid ──", name: "_sep_seo", widget: "hidden", required: false }
+          - { label: "Productie-URL (bijv. https://fysiopraktijkzeist.nl)", name: "site_url", widget: "string", hint: "Wordt gebruikt voor canonical URLs en sitemap" }
+          - { label: "Site tagline (voor delen)", name: "site_tagline", widget: "string", required: false }
+          - { label: "Standaard meta-omschrijving (fallback)", name: "default_description", widget: "text", required: false, hint: "Gebruikt als een pagina geen eigen beschrijving heeft" }
+          - { label: "Oprichtingsjaar", name: "founding_year", widget: "string", required: false }
+          - { label: "KvK-nummer", name: "kvk", widget: "string", required: false }
+          - { label: "BIG-nummer eigenaar", name: "big_owner", widget: "string", required: false }
+          - { label: "Latitude (Google Maps)", name: "latitude", widget: "string", required: false, hint: "Bijv. 52.0907 — vind via maps.google.com → rechtermuisknop op locatie" }
+          - { label: "Longitude (Google Maps)", name: "longitude", widget: "string", required: false, hint: "Bijv. 5.2498" }
+          - { label: "Prijsindicatie (€, €€, €€€)", name: "price_range", widget: "string", default: "€€", required: false }
+          - { label: "Deel-afbeelding (1200×630, voor WhatsApp/Facebook)", name: "og_image", widget: "image", required: false, hint: "Banner met praktijk + tagline. Wordt getoond als iemand de site deelt." }
+          - { label: "Logo (PNG met transparantie, voor schema)", name: "logo_url", widget: "image", required: false }
+          - { label: "Facebook URL", name: "facebook_url", widget: "string", required: false }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string", required: false }
+          - { label: "LinkedIn URL", name: "linkedin_url", widget: "string", required: false }
+          - { label: "ZorgkaartNederland profiel-URL", name: "zorgkaart_url", widget: "string", required: false }
+          - { label: "Google Business profiel-URL", name: "google_business_url", widget: "string", required: false }
+          - label: "Werkgebied (plaatsen)"
+            name: "service_areas"
+            widget: "list"
+            required: false
+            field: { label: "Plaatsnaam", name: "place", widget: "string" }
+            hint: "Plaatsen waar u patiënten vandaan ontvangt — versterkt lokale SEO"
 
       - label: "Hero sectie"
         name: "hero"

@@ -1,0 +1,59 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+{%- set site = general.site_url | stripTrailingSlash -%}
+# {{ general.name }}
+
+> {{ general.default_description }}
+
+{{ general.name }} is al sinds {{ general.founding_year or "1989" }} dé fysiotherapiepraktijk in Zeist en omliggende plaatsen ({% for p in general.service_areas %}{{ p }}{% if not loop.last %}, {% endif %}{% endfor %}). De praktijk is direct toegankelijk — een verwijzing van de huisarts is niet nodig. Gemiddeld zijn patiënten binnen 3 werkdagen geholpen.
+
+**Adres:** {{ general.address }}
+**Telefoon:** {{ general.phone }}
+**E-mail:** {{ general.email }}
+**Beoordeling:** {{ general.review_score }}/10 ({{ general.review_count }} patiëntbeoordelingen op ZorgkaartNederland)
+
+## Behandelingen
+
+{% for item in services.items -%}
+- [{{ item.name }}]({{ site }}{{ item.url }}): {{ item.description }}
+{% endfor %}
+
+## Specialisaties binnen het team
+
+{% for m in team.members -%}
+- **{{ m.name }}** — {{ m.specialty }}
+{% endfor %}
+
+## Openingstijden
+
+- Maandag: {{ hours.monday }}
+- Dinsdag: {{ hours.tuesday }}
+- Woensdag: {{ hours.wednesday }}
+- Donderdag: {{ hours.thursday }}
+- Vrijdag: {{ hours.friday }}
+- Zaterdag & zondag: gesloten
+- Telefonisch bereikbaar: {{ hours.phone_hours }}
+
+## Vergoedingen
+
+Fysiotherapie wordt vaak (gedeeltelijk) vergoed vanuit de aanvullende zorgverzekering. Chronische indicaties worden vanaf de 21e behandeling vergoed uit de basisverzekering. FysioFitness-abonnementen worden niet vergoed.
+
+## Veelgestelde vragen
+
+Zie: {{ site }}/veelgestelde-vragen
+
+## Blog
+
+{% for post in collections.posts | reverse | limit(10) -%}
+- [{{ post.data.title }}]({{ site }}{{ post.url }}) — {{ post.data.excerpt }}
+{% endfor %}
+
+## Belangrijke pagina's
+
+- Homepage: {{ site }}/
+- Tarieven 2026: {{ site }}/tarieven
+- Shop (FysioFitness & strippenkaarten): {{ site }}/shop
+- Afspraak maken: {{ site }}/#afspraak
+- Contact: {{ site }}/#contact

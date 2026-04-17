@@ -1,0 +1,20 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set site = general.site_url | stripTrailingSlash -%}
+{%- set pages = collections.all -%}
+{%- for page in pages -%}
+  {%- set url = page.url -%}
+  {%- if url and not url.startsWith("/admin") and url != false -%}
+  <url>
+    <loc>{{ site }}{{ url }}</loc>
+    <lastmod>{{ page.date | dateToISO }}</lastmod>
+    <changefreq>{% if url == "/" %}weekly{% elif "/blog/" in url %}monthly{% else %}monthly{% endif %}</changefreq>
+    <priority>{% if url == "/" %}1.0{% elif "/onze-diensten/" in url %}0.9{% elif "/blog/" in url %}0.7{% else %}0.6{% endif %}</priority>
+  </url>
+  {%- endif -%}
+{%- endfor %}
+</urlset>

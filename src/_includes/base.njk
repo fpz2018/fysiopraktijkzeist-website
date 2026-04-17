@@ -4,12 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% block title %}{{ title }}{% endblock %}</title>
-  <meta name="description" content="{% block description %}{{ description }}{% endblock %}" />
+  {% set _desc = description or general.default_description %}
+  <meta name="description" content="{% block description %}{{ _desc }}{% endblock %}" />
+
+  {# Canonical URL #}
+  {% set _siteUrl = (general.site_url or 'https://fysiopraktijkzeist.nl') | stripTrailingSlash %}
+  {% set _canonical = _siteUrl + page.url %}
+  <link rel="canonical" href="{{ _canonical }}" />
+
+  {# Open Graph (Facebook, WhatsApp, LinkedIn) #}
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:site_name" content="{{ general.name }}" />
+  <meta property="og:title" content="{% block og_title %}{{ title }}{% endblock %}" />
+  <meta property="og:description" content="{% block og_description %}{{ _desc }}{% endblock %}" />
+  <meta property="og:url" content="{{ _canonical }}" />
+  {% set _ogImg = ogImage or general.og_image %}
+  {% if _ogImg %}<meta property="og:image" content="{{ _siteUrl }}{{ _ogImg }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />{% endif %}
+
+  {# Twitter Cards #}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{% block tw_title %}{{ title }}{% endblock %}" />
+  <meta name="twitter:description" content="{% block tw_description %}{{ _desc }}{% endblock %}" />
+  {% if _ogImg %}<meta name="twitter:image" content="{{ _siteUrl }}{{ _ogImg }}" />{% endif %}
+
+  {# Favicon & PWA #}
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#1B5E6B" />
+
+  {# Crawler-instructies #}
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="author" content="{{ general.name }}" />
+
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
+
+  {# ─────── Structured data: LocalBusiness (Physiotherapist) ─────── #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalBusiness", "Physiotherapist", "LocalBusiness"],
+    "@id": "{{ _siteUrl }}/#praktijk",
+    "name": {{ general.name | dump | safe }},
+    "url": "{{ _siteUrl }}",
+    "telephone": {{ general.phone | dump | safe }},
+    "email": {{ general.email | dump | safe }},
+    "image": "{{ _siteUrl }}{{ general.og_image }}",
+    {% if general.logo_url %}"logo": "{{ _siteUrl }}{{ general.logo_url }}",{% endif %}
+    "priceRange": {{ (general.price_range or "€€") | dump | safe }},
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash, Credit Card, iDEAL, Invoice",
+    {% if general.founding_year %}"foundingDate": {{ general.founding_year | dump | safe }},{% endif %}
+    {% if general.kvk %}"vatID": "NL{{ general.kvk }}", "taxID": {{ general.kvk | dump | safe }},{% endif %}
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": {{ (general.address_street or general.address) | dump | safe }},
+      "postalCode": {{ (general.address_postal or "") | dump | safe }},
+      "addressLocality": {{ (general.address_city or "Zeist") | dump | safe }},
+      "addressCountry": {{ (general.address_country or "NL") | dump | safe }}
+    },
+    {% if general.latitude and general.longitude %}"geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ general.latitude | dump | safe }},
+      "longitude": {{ general.longitude | dump | safe }}
+    },{% endif %}
+    "areaServed": [
+      {% for place in general.service_areas %}{ "@type": "City", "name": {{ place | dump | safe }} }{% if not loop.last %},{% endif %}{% endfor %}
+    ],
+    "openingHoursSpecification": [
+      {% for d in openingHours %}{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": {{ d.day | dump | safe }},
+        "opens": {{ d.opens | dump | safe }},
+        "closes": {{ d.closes | dump | safe }}
+      }{% if not loop.last %},{% endif %}{% endfor %}
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ general.review_score | replace(',', '.') }}",
+      "bestRating": "10",
+      "worstRating": "1",
+      "ratingCount": {{ general.review_count }},
+      "reviewCount": {{ general.review_count }}
+    },
+    {% set _socials = [general.facebook_url, general.instagram_url, general.linkedin_url, general.zorgkaart_url, general.google_business_url] | compact %}
+    "sameAs": [{% for url in _socials %}{{ url | dump | safe }}{% if not loop.last %},{% endif %}{% endfor %}],
+    "medicalSpecialty": ["Physiotherapy", "PhysicalTherapy"],
+    "availableService": [
+      {% for s in services.items %}{
+        "@type": "MedicalTherapy",
+        "name": {{ s.name | dump | safe }},
+        "url": "{{ _siteUrl }}{{ s.url }}"
+      }{% if not loop.last %},{% endif %}{% endfor %}
+    ]
+  }
+  </script>
+
+  {# Person schema voor de eigenaar — versterkt E-E-A-T #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "{{ _siteUrl }}/#marc",
+    "name": "Marc de Jong",
+    "jobTitle": "Fysiotherapeut & orthomoleculair therapeut (kPNI)",
+    "image": "{{ _siteUrl }}/images/uploads/marc_mg_0629.jpg",
+    "worksFor": { "@id": "{{ _siteUrl }}/#praktijk" },
+    "knowsAbout": ["Fysiotherapie", "Manuele therapie", "Diagnostische echografie", "Dry needling", "Orthomoleculaire therapie", "kPNI", "Valpreventie"]{% if general.big_owner %},
+    "identifier": { "@type": "PropertyValue", "propertyID": "BIG-register", "value": {{ general.big_owner | dump | safe }} }{% endif %}
+  }
+  </script>
   <style>
     /* Sticky header wrapper (status-bar + nav samen) */
     .site-header { position: sticky; top: 0; z-index: var(--z-sticky); }
